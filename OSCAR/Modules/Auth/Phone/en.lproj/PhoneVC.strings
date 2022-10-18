@@ -1,0 +1,9 @@
+
+/* Class = "UILabel"; text = "Sign Up"; ObjectID = "4CM-TF-UQY"; */
+"4CM-TF-UQY.text" = "Sign Up";
+
+/* Class = "UITextField"; placeholder = "Phone Number"; ObjectID = "ZtX-wA-uqI"; */
+"ZtX-wA-uqI.placeholder" = "Phone Number";
+
+/* Class = "UIButton"; normalTitle = "Verify"; ObjectID = "c28-yq-8hv"; */
+"c28-yq-8hv.normalTitle" = "Verify";

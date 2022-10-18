@@ -1,0 +1,18 @@
+
+/* Class = "UITextField"; placeholder = "User Name"; ObjectID = "Mm7-du-m95"; */
+"Mm7-du-m95.placeholder" = "اسم المستخدم";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "Nk8-XA-OCp"; */
+"Nk8-XA-OCp.placeholder" = "كلمة المرور";
+
+/* Class = "UIButton"; normalTitle = "Sign up"; ObjectID = "aVG-gv-1ab"; */
+"aVG-gv-1ab.normalTitle" = "تسجيل";
+
+/* Class = "UITextField"; placeholder = "Password Confirmation"; ObjectID = "byj-mm-PPY"; */
+"byj-mm-PPY.placeholder" = "تأكيد كلمة المرور";
+
+/* Class = "UITextField"; placeholder = "Referral ID"; ObjectID = "nX8-OU-Bnz"; */
+"nX8-OU-Bnz.placeholder" = "رقم الدعوة";
+
+/* Class = "UITextField"; placeholder = "Email Address"; ObjectID = "owr-D1-aCm"; */
+"owr-D1-aCm.placeholder" = "البريد الإلكتروني";

@@ -1,0 +1,9 @@
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "8fL-UQ-e5Z"; */
+"8fL-UQ-e5Z.normalTitle" = "التالى";
+
+/* Class = "UILabel"; text = "Shopping Cart"; ObjectID = "EbQ-AP-dhj"; */
+"EbQ-AP-dhj.text" = "عربة التسوق";
+
+/* Class = "UILabel"; text = "You have 4 products in the cart."; ObjectID = "ftr-zV-c6s"; */
+"ftr-zV-c6s.text" = "لديك 4 منتجات في عربة التسوق.";

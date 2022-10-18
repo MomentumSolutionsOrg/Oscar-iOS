@@ -1,0 +1,15 @@
+
+/* Class = "UILabel"; text = "9-6-2021 1:55 PM"; ObjectID = "8wb-1o-Swk"; */
+"8wb-1o-Swk.text" = "9-6-2021 1:55 PM";
+
+/* Class = "UILabel"; text = "#7174"; ObjectID = "AEa-5K-axB"; */
+"AEa-5K-axB.text" = "#7174";
+
+/* Class = "UILabel"; text = "Order Date"; ObjectID = "UwA-yh-ZU8"; */
+"UwA-yh-ZU8.text" = "تاريخ الطلب";
+
+/* Class = "UILabel"; text = "Assigned"; ObjectID = "i5R-7s-Ypy"; */
+"i5R-7s-Ypy.text" = "Assigned";
+
+/* Class = "UILabel"; text = "Status"; ObjectID = "ynj-UH-RRC"; */
+"ynj-UH-RRC.text" = "الحالة";

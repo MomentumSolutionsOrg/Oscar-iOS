@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="274" id="KGk-i7-Jjw" customClass="CheckListTableViewCell" customModule="OSCAR" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="546" height="274"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="546" height="274"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gfG-dW-BzH" customClass="BorderView" customModule="OSCAR" customModuleProvider="target">
+                        <rect key="frame" x="20" y="12" width="506" height="250"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TbI-Ex-uzx">
+                                <rect key="frame" x="22" y="14" width="382" height="34"/>
+                                <color key="textColor" name="BlackTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x94-GR-GF6">
+                                <rect key="frame" x="468" y="18" width="20" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="DhX-IA-i8z"/>
+                                    <constraint firstAttribute="width" constant="20" id="FRp-Hb-lcY"/>
+                                </constraints>
+                                <state key="normal" image="delete"/>
+                                <connections>
+                                    <action selector="deleteButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="4v6-C0-MLh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YdJ-BG-Z2U">
+                                <rect key="frame" x="426" y="18" width="20" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="K2o-5A-kGN"/>
+                                    <constraint firstAttribute="height" constant="26" id="zFt-Ga-Uyr"/>
+                                </constraints>
+                                <state key="normal" image="office-push-pin"/>
+                                <connections>
+                                    <action selector="pinButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="fhf-jP-Gax"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="466" placeholderIntrinsicHeight="162" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fyL-aQ-tOo" customClass="SelfSizedTableView" customModule="OSCAR" customModuleProvider="target">
+                                <rect key="frame" x="22" y="58" width="466" height="177"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TbI-Ex-uzx" firstAttribute="leading" secondItem="gfG-dW-BzH" secondAttribute="leading" constant="22" id="3AV-7r-YpN"/>
+                            <constraint firstAttribute="bottom" secondItem="fyL-aQ-tOo" secondAttribute="bottom" constant="15" id="8Xq-dj-j3O"/>
+                            <constraint firstItem="YdJ-BG-Z2U" firstAttribute="centerY" secondItem="x94-GR-GF6" secondAttribute="centerY" id="DdE-cT-cm7"/>
+                            <constraint firstAttribute="trailing" secondItem="x94-GR-GF6" secondAttribute="trailing" constant="18" id="EWd-Vr-bmi"/>
+                            <constraint firstItem="fyL-aQ-tOo" firstAttribute="leading" secondItem="TbI-Ex-uzx" secondAttribute="leading" id="Kue-gg-LdH"/>
+                            <constraint firstItem="x94-GR-GF6" firstAttribute="top" secondItem="gfG-dW-BzH" secondAttribute="top" constant="18" id="Sec-QI-pkD"/>
+                            <constraint firstItem="fyL-aQ-tOo" firstAttribute="top" secondItem="TbI-Ex-uzx" secondAttribute="bottom" constant="10" id="UL6-Ju-WMJ"/>
+                            <constraint firstItem="TbI-Ex-uzx" firstAttribute="centerY" secondItem="x94-GR-GF6" secondAttribute="centerY" id="aqa-dY-gXd"/>
+                            <constraint firstItem="fyL-aQ-tOo" firstAttribute="trailing" secondItem="x94-GR-GF6" secondAttribute="trailing" id="gC3-gc-1Y4"/>
+                            <constraint firstItem="YdJ-BG-Z2U" firstAttribute="leading" secondItem="TbI-Ex-uzx" secondAttribute="trailing" constant="22" id="klT-QO-fdL"/>
+                            <constraint firstItem="x94-GR-GF6" firstAttribute="leading" secondItem="YdJ-BG-Z2U" secondAttribute="trailing" constant="22" id="nM0-eB-TXJ"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="addShadow" value="YES"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="showBorder" value="NO"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" name="LightBackground"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="gfG-dW-BzH" secondAttribute="trailing" constant="20" id="3CP-5r-nRS"/>
+                    <constraint firstItem="gfG-dW-BzH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="Nrf-m4-DkK"/>
+                    <constraint firstItem="gfG-dW-BzH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="WeI-G5-0MU"/>
+                    <constraint firstAttribute="bottom" secondItem="gfG-dW-BzH" secondAttribute="bottom" constant="12" id="d4D-ol-K59"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" name="LightBackground"/>
+            <connections>
+                <outlet property="checkListItemsTableView" destination="fyL-aQ-tOo" id="0fy-57-wPw"/>
+                <outlet property="deleteButton" destination="x94-GR-GF6" id="MB4-re-8Iu"/>
+                <outlet property="pinButton" destination="YdJ-BG-Z2U" id="j1T-AM-9hO"/>
+                <outlet property="titleTextField" destination="TbI-Ex-uzx" id="kW7-Fp-DLc"/>
+            </connections>
+            <point key="canvasLocation" x="246.37681159420291" y="126.5625"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="delete" width="15" height="18"/>
+        <image name="office-push-pin" width="17" height="17"/>
+        <namedColor name="BlackTextColor">
+            <color red="0.29399999976158142" green="0.29399999976158142" blue="0.29399999976158142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="LightBackground">
+            <color red="0.96100002527236938" green="0.96100002527236938" blue="0.96100002527236938" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

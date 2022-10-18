@@ -1,0 +1,27 @@
+
+/* Class = "UILabel"; text = "Payment Method"; ObjectID = "JSj-Ov-3Ln"; */
+"JSj-Ov-3Ln.text" = "Payment Method";
+
+/* Class = "UILabel"; text = "Checklist"; ObjectID = "Jvl-dR-zfz"; */
+"Jvl-dR-zfz.text" = "Checklist";
+
+/* Class = "UIButton"; normalTitle = "16991 "; ObjectID = "Kk0-do-WUo"; */
+"Kk0-do-WUo.normalTitle" = "16991 ";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "PDl-6o-Z1X"; */
+"PDl-6o-Z1X.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Track Orders"; ObjectID = "T7p-CU-Hwy"; */
+"T7p-CU-Hwy.text" = "Track Orders";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "fjE-Zs-3j8"; */
+"fjE-Zs-3j8.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Logout"; ObjectID = "gby-JW-ynj"; */
+"gby-JW-ynj.normalTitle" = "Logout";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "mqR-Lm-mAu"; */
+"mqR-Lm-mAu.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "nxR-qa-ezu"; */
+"nxR-qa-ezu.text" = "Label";

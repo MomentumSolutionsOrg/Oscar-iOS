@@ -1,0 +1,84 @@
+
+/* Class = "UILabel"; text = "PROMO CODE"; ObjectID = "2hm-4U-4X8"; */
+"2hm-4U-4X8.text" = "PROMO CODE";
+
+/* Class = "UILabel"; text = "Same Day Shopping"; ObjectID = "36S-MR-NbQ"; */
+"36S-MR-NbQ.text" = "Same Day Delivery";
+
+/* Class = "UILabel"; text = "12:00 PM"; ObjectID = "4ai-wC-Nb8"; */
+"4ai-wC-Nb8.text" = "12:00 PM";
+
+/* Class = "UILabel"; text = "Card Upon Delivery"; ObjectID = "E0f-sk-6Nk"; */
+"E0f-sk-6Nk.text" = "Card Upon Delivery";
+
+/* Class = "UILabel"; text = "42 EGP"; ObjectID = "FwG-iY-jVB"; */
+"FwG-iY-jVB.text" = "42 EGP";
+
+/* Class = "UILabel"; text = "TOTAL CART"; ObjectID = "GDl-bg-dbj"; */
+"GDl-bg-dbj.text" = "TOTAL CART";
+
+/* Class = "UILabel"; text = "Cash On Delivery"; ObjectID = "H3F-co-byN"; */
+"H3F-co-byN.text" = "Cash On Delivery";
+
+/* Class = "UIButton"; normalTitle = "APPLY CODE"; ObjectID = "MQi-YN-5nN"; */
+"MQi-YN-5nN.normalTitle" = "APPLY CODE";
+
+/* Class = "UILabel"; text = "N/A"; ObjectID = "PAF-or-SVk"; */
+"PAF-or-SVk.text" = "N/A";
+
+/* Class = "UIButton"; normalTitle = "Choose Address +"; ObjectID = "Qac-Ai-gtj"; */
+"Qac-Ai-gtj.normalTitle" = "Choose Address +";
+
+/* Class = "UILabel"; text = "2. Payment Method"; ObjectID = "Ub1-f0-mG1"; */
+"Ub1-f0-mG1.text" = "2. Payment Method";
+
+/* Class = "UILabel"; text = "DELIVERY FEES"; ObjectID = "WQL-UF-G0h"; */
+"WQL-UF-G0h.text" = "DELIVERY FEES";
+
+/* Class = "UILabel"; text = "Masaken Sheraton"; ObjectID = "Wgn-Py-PGg"; */
+"Wgn-Py-PGg.text" = "Masaken Sheraton";
+
+/* Class = "UILabel"; text = "20% x 40 EGP"; ObjectID = "WiJ-5a-kRd"; */
+"WiJ-5a-kRd.text" = "20% x 40 EGP";
+
+/* Class = "UILabel"; text = "Order Summary"; ObjectID = "Zmp-Cy-t5Y"; */
+"Zmp-Cy-t5Y.text" = "Order Summary";
+
+/* Class = "UILabel"; text = "1. Address"; ObjectID = "arZ-Z4-zYz"; */
+"arZ-Z4-zYz.text" = "1. Address";
+
+/* Class = "UILabel"; text = "20 EGP"; ObjectID = "bTs-I5-iuf"; */
+"bTs-I5-iuf.text" = "20 EGP";
+
+/* Class = "UILabel"; text = "20% off"; ObjectID = "c5H-Dl-qxo"; */
+"c5H-Dl-qxo.text" = "20% off";
+
+/* Class = "UILabel"; text = "8 Sept 2021"; ObjectID = "cUc-dJ-GWm"; */
+"cUc-dJ-GWm.text" = "8 Sept 2021";
+
+/* Class = "UILabel"; text = "20 EGP"; ObjectID = "dtg-5L-KVQ"; */
+"dtg-5L-KVQ.text" = "20 EGP";
+
+/* Class = "UILabel"; text = "Promo Code"; ObjectID = "hqd-sk-LYe"; */
+"hqd-sk-LYe.text" = "Promo Code";
+
+/* Class = "UILabel"; text = "Within the day"; ObjectID = "mdX-H2-R5P"; */
+"mdX-H2-R5P.text" = "Within the day";
+
+/* Class = "UILabel"; text = "Scheduled"; ObjectID = "pwl-zp-xSD"; */
+"pwl-zp-xSD.text" = "Scheduled";
+
+/* Class = "UILabel"; text = "3. Delivery Option"; ObjectID = "s3m-4w-ud3"; */
+"s3m-4w-ud3.text" = "3. Delivery Option";
+
+/* Class = "UILabel"; text = "9 - el adeeeb ali adham  st"; ObjectID = "sht-0G-se3"; */
+"sht-0G-se3.text" = "9 - el adeeeb ali adham  st";
+
+/* Class = "UILabel"; text = "Home"; ObjectID = "tFr-4t-Jzl"; */
+"tFr-4t-Jzl.text" = "Home";
+
+/* Class = "UIButton"; normalTitle = "CHECK OUT"; ObjectID = "vOW-fy-fu2"; */
+"vOW-fy-fu2.normalTitle" = "CHECK OUT";
+
+/* Class = "UITextField"; placeholder = "Enter Promo Code"; ObjectID = "woI-UC-m6U"; */
+"woI-UC-m6U.placeholder" = "Enter Promo Code";

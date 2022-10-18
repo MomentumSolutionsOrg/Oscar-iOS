@@ -1,0 +1,12 @@
+
+/* Class = "UILabel"; text = "Your order has been placed successfully! For more details, go to my orders."; ObjectID = "HWa-cL-TcB"; */
+"HWa-cL-TcB.text" = "Your order has been placed successfully! For more details, go to my orders.";
+
+/* Class = "UILabel"; text = "Order Success !"; ObjectID = "p2X-Vj-g0g"; */
+"p2X-Vj-g0g.text" = "Order Success !";
+
+/* Class = "UIButton"; normalTitle = "My Orders"; ObjectID = "pD0-sT-pGp"; */
+"pD0-sT-pGp.normalTitle" = "My Orders";
+
+/* Class = "UIButton"; normalTitle = "Continue shopping"; ObjectID = "yAK-PU-Zuo"; */
+"yAK-PU-Zuo.normalTitle" = "Continue shopping";

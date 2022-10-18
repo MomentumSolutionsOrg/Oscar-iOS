@@ -1,0 +1,15 @@
+
+/* Class = "UIButton"; normalTitle = "Contact us"; ObjectID = "CK4-bs-kVX"; */
+"CK4-bs-kVX.normalTitle" = "اتصل بنا";
+
+/* Class = "UIButton"; normalTitle = "Resend Code"; ObjectID = "NUl-mx-fkZ"; */
+"NUl-mx-fkZ.normalTitle" = "أعد إرسال الرمز";
+
+/* Class = "UILabel"; text = "Verification Code"; ObjectID = "SwZ-z3-9ac"; */
+"SwZ-z3-9ac.text" = "رمز التحقق";
+
+/* Class = "UIButton"; normalTitle = "Verify"; ObjectID = "bJv-QY-IRC"; */
+"bJv-QY-IRC.normalTitle" = "تحقق";
+
+/* Class = "UILabel"; text = "2:00"; ObjectID = "fdP-RF-Wsi"; */
+"fdP-RF-Wsi.text" = "2:00";

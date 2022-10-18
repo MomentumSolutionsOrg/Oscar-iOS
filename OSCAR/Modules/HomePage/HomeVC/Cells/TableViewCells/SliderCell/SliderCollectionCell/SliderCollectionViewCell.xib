@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SliderCollectionViewCell" customModule="OSCAR" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="386" height="400"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="386" height="400"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eSo-xE-kLL" customClass="RoundedImageView" customModule="OSCAR" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="386" height="400"/>
+                    </imageView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" name="LightBackground"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="eSo-xE-kLL" secondAttribute="trailing" id="0Ml-D6-PkU"/>
+                <constraint firstItem="eSo-xE-kLL" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="11t-U2-TnR"/>
+                <constraint firstAttribute="bottom" secondItem="eSo-xE-kLL" secondAttribute="bottom" id="VMz-19-jYg"/>
+                <constraint firstItem="eSo-xE-kLL" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="bc4-34-cVv"/>
+            </constraints>
+            <size key="customSize" width="386" height="159"/>
+            <connections>
+                <outlet property="sliderImageView" destination="eSo-xE-kLL" id="EMk-8c-NeK"/>
+            </connections>
+            <point key="canvasLocation" x="165.21739130434784" y="104.12946428571428"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="LightBackground">
+            <color red="0.96100002527236938" green="0.96100002527236938" blue="0.96100002527236938" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

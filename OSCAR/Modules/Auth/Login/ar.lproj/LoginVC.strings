@@ -1,0 +1,18 @@
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "8M6-Yw-AJ2"; */
+"8M6-Yw-AJ2.normalTitle" = "تسجيل الدخول";
+
+/* Class = "UITextField"; placeholder = "Email Address"; ObjectID = "A6p-fJ-zBC"; */
+"A6p-fJ-zBC.placeholder" = "البريدالإلكترونى";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "DKy-TJ-IsG"; */
+"DKy-TJ-IsG.placeholder" = "كلمة المرور";
+
+/* Class = "UIButton"; normalTitle = "Skip "; ObjectID = "W5x-yV-Ssn"; */
+"W5x-yV-Ssn.normalTitle" = "تخطئ ";
+
+/* Class = "UIButton"; normalTitle = "Forgot Password"; ObjectID = "tFz-bm-7No"; */
+"tFz-bm-7No.normalTitle" = "نسيت كلمة المرور";
+
+/* Class = "UIButton"; normalTitle = "Don’t have an account ? Sign Up"; ObjectID = "vv6-6N-D39"; */
+"vv6-6N-D39.normalTitle" = "ليس لديك حساب؟ تسجيل";

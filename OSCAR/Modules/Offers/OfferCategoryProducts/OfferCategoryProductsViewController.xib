@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OfferCategoryProductsViewController" customModule="OSCAR" customModuleProvider="target">
+            <connections>
+                <outlet property="productsCollectionView" destination="ptE-A3-nN4" id="5RM-WI-Aaq"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2hG-ia-HZ8" customClass="BottomShadowView" customModule="OSCAR" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="MDL-Vr-BLP">
+                            <rect key="frame" x="152" y="10" width="110" height="36"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="110" id="MdN-DN-mUy"/>
+                                <constraint firstAttribute="height" constant="36" id="aY7-D8-LXt"/>
+                            </constraints>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pY1-8O-YvP">
+                            <rect key="frame" x="32" y="15.5" width="20" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="25" id="8XQ-XZ-aJN"/>
+                                <constraint firstAttribute="width" constant="20" id="Ymt-tq-8OK"/>
+                            </constraints>
+                            <state key="normal" image="backArrow"/>
+                            <connections>
+                                <action selector="backButtonTapped:" destination="-1" eventType="touchUpInside" id="QUh-ug-dek"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIC-ez-CmE">
+                            <rect key="frame" x="0.0" y="0.0" width="152" height="56"/>
+                            <connections>
+                                <action selector="backButtonTapped:" destination="-1" eventType="touchUpInside" id="NDd-5G-9Vy"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" name="LightBackground"/>
+                    <constraints>
+                        <constraint firstItem="MDL-Vr-BLP" firstAttribute="top" secondItem="2hG-ia-HZ8" secondAttribute="top" constant="10" id="1lI-ir-3NW"/>
+                        <constraint firstItem="MDL-Vr-BLP" firstAttribute="centerY" secondItem="2hG-ia-HZ8" secondAttribute="centerY" id="1q8-SC-m6N"/>
+                        <constraint firstItem="MDL-Vr-BLP" firstAttribute="leading" secondItem="aIC-ez-CmE" secondAttribute="trailing" id="4gx-UL-wPY"/>
+                        <constraint firstItem="aIC-ez-CmE" firstAttribute="top" secondItem="2hG-ia-HZ8" secondAttribute="top" id="9sV-IZ-DwK"/>
+                        <constraint firstItem="pY1-8O-YvP" firstAttribute="centerY" secondItem="MDL-Vr-BLP" secondAttribute="centerY" id="JdU-KE-zW3"/>
+                        <constraint firstItem="pY1-8O-YvP" firstAttribute="leading" secondItem="2hG-ia-HZ8" secondAttribute="leading" constant="32" id="OhU-VO-DWP"/>
+                        <constraint firstAttribute="bottom" secondItem="MDL-Vr-BLP" secondAttribute="bottom" constant="10" id="WCf-QV-5FD"/>
+                        <constraint firstAttribute="bottom" secondItem="aIC-ez-CmE" secondAttribute="bottom" id="clo-7h-atU"/>
+                        <constraint firstItem="MDL-Vr-BLP" firstAttribute="centerX" secondItem="2hG-ia-HZ8" secondAttribute="centerX" id="xvt-eb-Nsp"/>
+                        <constraint firstItem="aIC-ez-CmE" firstAttribute="leading" secondItem="2hG-ia-HZ8" secondAttribute="leading" id="yga-dx-cQd"/>
+                    </constraints>
+                </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ptE-A3-nN4">
+                    <rect key="frame" x="0.0" y="100" width="414" height="730"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="4Fk-C4-ZKc">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="LightBackground"/>
+            <constraints>
+                <constraint firstItem="2hG-ia-HZ8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="K3H-bx-u6f"/>
+                <constraint firstItem="ptE-A3-nN4" firstAttribute="top" secondItem="2hG-ia-HZ8" secondAttribute="bottom" id="MmS-n2-U0r"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2hG-ia-HZ8" secondAttribute="trailing" id="VWx-Jo-jv7"/>
+                <constraint firstItem="2hG-ia-HZ8" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="nrJ-hm-p56"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ptE-A3-nN4" secondAttribute="bottom" constant="32" id="sHe-hV-88a"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ptE-A3-nN4" secondAttribute="trailing" id="wiL-9V-hH2"/>
+                <constraint firstItem="ptE-A3-nN4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="yoA-cu-act"/>
+            </constraints>
+            <point key="canvasLocation" x="5.7971014492753632" y="2.6785714285714284"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="backArrow" width="32" height="45"/>
+        <image name="logo" width="180" height="59"/>
+        <namedColor name="LightBackground">
+            <color red="0.96100002527236938" green="0.96100002527236938" blue="0.96100002527236938" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -1,0 +1,36 @@
+
+/* Class = "UILabel"; text = "City"; ObjectID = "2AJ-kI-h7y"; */
+"2AJ-kI-h7y.text" = "City";
+
+/* Class = "UILabel"; text = "Street"; ObjectID = "63w-Xi-yNz"; */
+"63w-Xi-yNz.text" = "Street";
+
+/* Class = "UIButton"; normalTitle = "Save Address"; ObjectID = "Emo-yZ-PD9"; */
+"Emo-yZ-PD9.normalTitle" = "Save Address";
+
+/* Class = "UILabel"; text = "Building No."; ObjectID = "InW-2d-bLS"; */
+"InW-2d-bLS.text" = "Building No.";
+
+/* Class = "UILabel"; text = "Phone"; ObjectID = "UpE-fn-JBm"; */
+"UpE-fn-JBm.text" = "Phone";
+
+/* Class = "UILabel"; text = "Floor No."; ObjectID = "WPZ-JZ-JJq"; */
+"WPZ-JZ-JJq.text" = "Floor No.";
+
+/* Class = "UITextField"; placeholder = "Address Title"; ObjectID = "ZfL-S2-WbR"; */
+"ZfL-S2-WbR.placeholder" = "Address Title (i.e. Home)";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "cV0-3u-6Dn"; */
+"cV0-3u-6Dn.text" = "Name";
+
+/* Class = "UIButton"; normalTitle = "    Set as default address"; ObjectID = "p4c-Kl-JOV"; */
+"p4c-Kl-JOV.normalTitle" = "    Set as default address";
+
+/* Class = "UILabel"; text = "Area"; ObjectID = "u39-ag-8Sb"; */
+"u39-ag-8Sb.text" = "Area";
+
+/* Class = "UILabel"; text = "Apartment No."; ObjectID = "wec-ZZ-0ZY"; */
+"wec-ZZ-0ZY.text" = "Apartment No.";
+
+/* Class = "UILabel"; text = "Landline(optional)"; ObjectID = "Erw-r6-TKl"; */
+"Erw-r6-TKl.text" = "Landline(optional)";

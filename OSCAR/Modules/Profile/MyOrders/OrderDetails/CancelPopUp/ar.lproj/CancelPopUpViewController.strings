@@ -1,0 +1,13 @@
+
+
+/* Class = "UIButton"; normalTitle = "16991"; ObjectID = "eVb-U2-NFM"; */
+"eVb-U2-NFM.normalTitle" = "16991";
+
+/* Class = "UILabel"; text = "Kindly contact us on"; ObjectID = "et7-pA-vhm"; */
+"et7-pA-vhm.text" = "برجاء التواصل معنا علي";
+
+/* Class = "UIButton"; normalTitle = "Ok"; ObjectID = "w7M-eX-tYv"; */
+"w7M-eX-tYv.normalTitle" = "حسنا";
+
+/* Class = "UILabel"; text = "to cancel your order"; ObjectID = "ySw-8L-vH6"; */
+"ySw-8L-vH6.text" = "لإلغاء طلبك";

@@ -1,0 +1,48 @@
+
+/* Class = "UILabel"; text = "Order Code"; ObjectID = "15H-JY-OxA"; */
+"15H-JY-OxA.text" = "Order Code";
+
+/* Class = "UILabel"; text = "Delivery Fees"; ObjectID = "6Q1-dj-dxz"; */
+"6Q1-dj-dxz.text" = "Delivery Fees";
+
+/* Class = "UILabel"; text = "التحمع الخامس شارع حسن شفيق المصرى,Test,Test,Test,التجمع,عمارة ٥٢٦ شقة يمين السلم,30.003042222161117,31.45159272596574"; ObjectID = "Ihd-fx-Dme"; */
+"Ihd-fx-Dme.text" = "التحمع الخامس شارع حسن شفيق المصرى,Test,Test,Test,التجمع,عمارة ٥٢٦ شقة يمين السلم,30.003042222161117,31.45159272596574";
+
+/* Class = "UILabel"; text = "Order Status"; ObjectID = "R4q-ZT-Iux"; */
+"R4q-ZT-Iux.text" = "Order Status";
+
+/* Class = "UILabel"; text = "Subtotal"; ObjectID = "SxP-gq-Xh1"; */
+"SxP-gq-Xh1.text" = "Subtotal";
+
+/* Class = "UILabel"; text = "Assigned"; ObjectID = "V7P-7M-W1h"; */
+"V7P-7M-W1h.text" = "Assigned";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "VSA-4K-aZS"; */
+"VSA-4K-aZS.normalTitle" = "Cancel";
+
+/* Class = "UILabel"; text = "Order Date"; ObjectID = "foY-F2-3BS"; */
+"foY-F2-3BS.text" = "Order Date";
+
+/* Class = "UILabel"; text = "EGP 0.00"; ObjectID = "gl1-La-MzP"; */
+"gl1-La-MzP.text" = "EGP 0.00";
+
+/* Class = "UILabel"; text = "Items :"; ObjectID = "mAS-q1-2lE"; */
+"mAS-q1-2lE.text" = "Items :";
+
+/* Class = "UILabel"; text = "EGP 0.00"; ObjectID = "s2M-ep-psp"; */
+"s2M-ep-psp.text" = "EGP 0.00";
+
+/* Class = "UILabel"; text = "Shipping Address"; ObjectID = "vAj-ks-B4S"; */
+"vAj-ks-B4S.text" = "Shipping Address";
+
+/* Class = "UILabel"; text = "#7174"; ObjectID = "wO6-3y-1Ye"; */
+"wO6-3y-1Ye.text" = "#7174";
+
+/* Class = "UILabel"; text = "9-6-2021 1:55 PM"; ObjectID = "yP2-nA-kmk"; */
+"yP2-nA-kmk.text" = "9-6-2021 1:55 PM";
+
+/* Class = "UILabel"; text = "EGP 0.00"; ObjectID = "zUk-st-BCb"; */
+"zUk-st-BCb.text" = "EGP 0.00";
+
+/* Class = "UILabel"; text = "Total"; ObjectID = "zkl-iu-kNV"; */
+"zkl-iu-kNV.text" = "Total";

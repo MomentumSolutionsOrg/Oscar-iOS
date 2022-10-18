@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="35" id="KGk-i7-Jjw" customClass="CheckListItemTableViewCell" customModule="OSCAR" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="356" height="35"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="356" height="35"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HkM-Ew-tUc">
+                        <rect key="frame" x="40" y="8" width="300" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" name="BlackTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 218" translatesAutoresizingMaskIntoConstraints="NO" id="P9O-OX-vQ5">
+                        <rect key="frame" x="10" y="5" width="20" height="20"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="Fln-Bb-dF4"/>
+                            <constraint firstAttribute="height" constant="20" id="bbc-CV-orC"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="P9O-OX-vQ5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="2Kl-CH-j6R"/>
+                    <constraint firstItem="P9O-OX-vQ5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="JTe-hM-ONI"/>
+                    <constraint firstItem="HkM-Ew-tUc" firstAttribute="centerY" secondItem="P9O-OX-vQ5" secondAttribute="centerY" id="Lbe-XT-GLb"/>
+                    <constraint firstAttribute="bottom" secondItem="P9O-OX-vQ5" secondAttribute="bottom" constant="5" id="M9t-e9-9vI"/>
+                    <constraint firstItem="HkM-Ew-tUc" firstAttribute="leading" secondItem="P9O-OX-vQ5" secondAttribute="trailing" constant="10" id="ryI-Lh-E2K"/>
+                    <constraint firstAttribute="trailing" secondItem="HkM-Ew-tUc" secondAttribute="trailing" constant="16" id="uSH-CM-mJi"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="checkImage" destination="P9O-OX-vQ5" id="eCb-3C-cTa"/>
+                <outlet property="itemNameLabel" destination="HkM-Ew-tUc" id="DGY-P6-asd"/>
+            </connections>
+            <point key="canvasLocation" x="108.69565217391305" y="46.540178571428569"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Rectangle 218" width="15" height="15"/>
+        <namedColor name="BlackTextColor">
+            <color red="0.29399999976158142" green="0.29399999976158142" blue="0.29399999976158142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

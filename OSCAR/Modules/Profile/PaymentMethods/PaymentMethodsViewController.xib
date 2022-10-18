@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PaymentMethodsViewController" customModule="OSCAR" customModuleProvider="target">
+            <connections>
+                <outlet property="paymentTypesCollectionView" destination="47P-fw-Ynn" id="HUP-Zg-ohr"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qIB-8S-96I" customClass="BottomShadowView" customModule="OSCAR" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="xcF-yR-Bdi">
+                            <rect key="frame" x="152" y="10" width="110" height="36"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="2oZ-Fh-ua7"/>
+                                <constraint firstAttribute="width" constant="110" id="maG-oo-reR"/>
+                            </constraints>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ASb-tv-qSd">
+                            <rect key="frame" x="32" y="15.5" width="20" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="25" id="9fZ-Lu-G5M"/>
+                                <constraint firstAttribute="width" constant="20" id="ka1-OW-hE4"/>
+                            </constraints>
+                            <state key="normal" image="backArrow"/>
+                            <connections>
+                                <action selector="backButtonTapped:" destination="-1" eventType="touchUpInside" id="MEa-ca-GxJ"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="REL-Ey-IyI">
+                            <rect key="frame" x="0.0" y="0.0" width="152" height="56"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" name="LightBackground"/>
+                    <constraints>
+                        <constraint firstItem="ASb-tv-qSd" firstAttribute="leading" secondItem="qIB-8S-96I" secondAttribute="leading" constant="32" id="7o2-CB-uWg"/>
+                        <constraint firstAttribute="bottom" secondItem="REL-Ey-IyI" secondAttribute="bottom" id="8rW-Kl-MmD"/>
+                        <constraint firstAttribute="bottom" secondItem="xcF-yR-Bdi" secondAttribute="bottom" constant="10" id="BC5-D9-xgS"/>
+                        <constraint firstItem="xcF-yR-Bdi" firstAttribute="leading" secondItem="REL-Ey-IyI" secondAttribute="trailing" id="MfU-0A-1Py"/>
+                        <constraint firstItem="REL-Ey-IyI" firstAttribute="leading" secondItem="qIB-8S-96I" secondAttribute="leading" id="XZg-5D-qcm"/>
+                        <constraint firstItem="REL-Ey-IyI" firstAttribute="top" secondItem="qIB-8S-96I" secondAttribute="top" id="bIg-Re-gDF"/>
+                        <constraint firstItem="xcF-yR-Bdi" firstAttribute="top" secondItem="qIB-8S-96I" secondAttribute="top" constant="10" id="cZU-Os-I5F"/>
+                        <constraint firstItem="xcF-yR-Bdi" firstAttribute="centerY" secondItem="qIB-8S-96I" secondAttribute="centerY" id="eGn-xw-wlt"/>
+                        <constraint firstItem="ASb-tv-qSd" firstAttribute="centerY" secondItem="xcF-yR-Bdi" secondAttribute="centerY" id="vhd-vY-E6C"/>
+                        <constraint firstItem="xcF-yR-Bdi" firstAttribute="centerX" secondItem="qIB-8S-96I" secondAttribute="centerX" id="zG2-vd-Xa7"/>
+                    </constraints>
+                </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="47P-fw-Ynn">
+                    <rect key="frame" x="32" y="132" width="350" height="695"/>
+                    <color key="backgroundColor" name="LightBackground"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ADC-vk-Cmv">
+                        <size key="itemSize" width="140" height="185"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="LightBackground"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="47P-fw-Ynn" secondAttribute="trailing" constant="32" id="5QJ-l1-Zef"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="47P-fw-Ynn" secondAttribute="bottom" constant="35" id="Ecn-Tf-3N9"/>
+                <constraint firstItem="47P-fw-Ynn" firstAttribute="top" secondItem="qIB-8S-96I" secondAttribute="bottom" constant="32" id="NZv-J8-wN1"/>
+                <constraint firstItem="qIB-8S-96I" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="bYD-Wq-1YR"/>
+                <constraint firstItem="qIB-8S-96I" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="pBU-zg-MqI"/>
+                <constraint firstItem="47P-fw-Ynn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="pvJ-Ix-GKh"/>
+                <constraint firstAttribute="trailing" secondItem="qIB-8S-96I" secondAttribute="trailing" id="sVM-xd-CTs"/>
+            </constraints>
+            <point key="canvasLocation" x="-145" y="-23"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="backArrow" width="32" height="45"/>
+        <image name="logo" width="180" height="59"/>
+        <namedColor name="LightBackground">
+            <color red="0.96100002527236938" green="0.96100002527236938" blue="0.96100002527236938" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

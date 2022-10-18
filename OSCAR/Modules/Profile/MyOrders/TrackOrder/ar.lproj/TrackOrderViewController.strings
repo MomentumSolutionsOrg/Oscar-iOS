@@ -1,0 +1,24 @@
+
+/* Class = "UILabel"; text = "31.45159272596574"; ObjectID = "3SU-gd-8wu"; */
+"3SU-gd-8wu.text" = "31.45159272596574";
+
+/* Class = "UILabel"; text = "On The Way"; ObjectID = "8By-j1-cSD"; */
+"8By-j1-cSD.text" = "On The Way";
+
+/* Class = "UILabel"; text = "Order Code"; ObjectID = "Jq8-nF-nrn"; */
+"Jq8-nF-nrn.text" = "رمز الطلب";
+
+/* Class = "UILabel"; text = "9-6-2021 1:55 PM"; ObjectID = "SSv-LD-dPN"; */
+"SSv-LD-dPN.text" = "9-6-2021 1:55 PM";
+
+/* Class = "UILabel"; text = "Shipping Address"; ObjectID = "ZuF-8T-u66"; */
+"ZuF-8T-u66.text" = "عنوان الشحن";
+
+/* Class = "UILabel"; text = "#7174"; ObjectID = "oSe-D7-Fsg"; */
+"oSe-D7-Fsg.text" = "#7174";
+
+/* Class = "UILabel"; text = "Order Status"; ObjectID = "sOT-2j-pKc"; */
+"sOT-2j-pKc.text" = "حالة الطلب";
+
+/* Class = "UILabel"; text = "Order Date"; ObjectID = "vxm-25-VGm"; */
+"vxm-25-VGm.text" = "تاريخ الطلب";

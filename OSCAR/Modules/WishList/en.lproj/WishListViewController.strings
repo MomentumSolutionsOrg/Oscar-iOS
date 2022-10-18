@@ -1,0 +1,12 @@
+
+/* Class = "UILabel"; text = "My Favorites"; ObjectID = "FYt-I6-4KP"; */
+"FYt-I6-4KP.text" = "My Favorites";
+
+/* Class = "UIButton"; normalTitle = "Add selected to cart"; ObjectID = "Gtw-NE-0Ev"; */
+"Gtw-NE-0Ev.normalTitle" = "Add selected to cart";
+
+/* Class = "UIButton"; normalTitle = "select all"; ObjectID = "LHp-89-Qhf"; */
+"LHp-89-Qhf.normalTitle" = "select all";
+
+/* Class = "UIButton"; normalTitle = "Clear selected"; ObjectID = "QO7-gS-1JI"; */
+"QO7-gS-1JI.normalTitle" = "Unselect all";

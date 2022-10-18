@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UpdateProfileViewController" customModule="OSCAR" customModuleProvider="target">
+            <connections>
+                <outlet property="cameraImageView" destination="JxE-sl-aa8" id="rEc-7p-s5D"/>
+                <outlet property="profileImage" destination="eAI-ga-DLi" id="G3j-kI-0Vg"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="textFieldsArray" destination="Ppc-2g-qFD" collectionClass="NSMutableArray" id="qFe-Iy-17S"/>
+                <outletCollection property="textFieldsArray" destination="tyx-JJ-TfY" collectionClass="NSMutableArray" id="gI4-tX-Txo"/>
+                <outletCollection property="textFieldsArray" destination="iH3-II-ntn" collectionClass="NSMutableArray" id="sub-eo-BLT"/>
+                <outletCollection property="textFieldsArray" destination="vI5-3k-2fC" collectionClass="NSMutableArray" id="Ieu-ag-pKS"/>
+                <outletCollection property="textFieldsArray" destination="iOB-ha-QhM" collectionClass="NSMutableArray" id="SEW-dO-Dq7"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wuc-gG-WJi">
+                    <rect key="frame" x="36" y="30" width="20" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="MlN-H1-UWW"/>
+                        <constraint firstAttribute="width" constant="20" id="ib7-Xm-3jM"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="backArrow"/>
+                    <connections>
+                        <action selector="backAction:" destination="-1" eventType="touchUpInside" id="x1Z-wi-lWz"/>
+                    </connections>
+                </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="VfB-MH-N3K">
+                    <rect key="frame" x="105" y="25" width="110" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="DiQ-Zf-4oh"/>
+                        <constraint firstAttribute="width" constant="110" id="ra1-wn-VM1"/>
+                    </constraints>
+                </imageView>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sXD-BC-i2T">
+                    <rect key="frame" x="0.0" y="65" width="320" height="503"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PZB-8f-661">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="418"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Tf0-7R-xEx">
+                                    <rect key="frame" x="30" y="120" width="260" height="178"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="SgP-LJ-25a">
+                                            <rect key="frame" x="0.0" y="0.0" width="260" height="46"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ppc-2g-qFD" customClass="GeneralTextField" customModule="OSCAR" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="122.5" height="46"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="localizedPlaceholder" value="first_name"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tyx-JJ-TfY" customClass="GeneralTextField" customModule="OSCAR" customModuleProvider="target">
+                                                    <rect key="frame" x="137.5" y="0.0" width="122.5" height="46"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="46" id="1QF-lo-eEM"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="Last Name"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
+                                            </subviews>
+                                        </stackView>
+                                        <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mobile Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iH3-II-ntn" customClass="GeneralTextField" customModule="OSCAR" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="66" width="260" height="46"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="ASCIICapableNumberPad"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="localizedPlaceholder" value="mobile_number"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </textField>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vI5-3k-2fC" customClass="GeneralTextField" customModule="OSCAR" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="132" width="260" height="46"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress"/>
+                                        </textField>
+                                        <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iOB-ha-QhM" customClass="GeneralTextField" customModule="OSCAR" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="178" width="260" height="0.0"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="Password"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </textField>
+                                    </subviews>
+                                </stackView>
+                                <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eAI-ga-DLi" customClass="CircleImageView" customModule="OSCAR" customModuleProvider="target">
+                                    <rect key="frame" x="117.5" y="15" width="85" height="85"/>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="85" id="Plc-Bt-6oS"/>
+                                        <constraint firstAttribute="height" constant="85" id="uAL-k1-s6u"/>
+                                    </constraints>
+                                </imageView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kOr-CS-650" customClass="BackGroundButton" customModule="OSCAR" customModuleProvider="target">
+                                    <rect key="frame" x="30" y="323" width="260" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="mE7-Ft-Eli"/>
+                                    </constraints>
+                                    <state key="normal" title="Save"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="localizedTitle" value="save"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="saveAction:" destination="-1" eventType="touchUpInside" id="A6h-IG-c8y"/>
+                                    </connections>
+                                </button>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="JxE-sl-aa8">
+                                    <rect key="frame" x="147.5" y="45" width="25" height="25"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="25" id="TGr-ml-yNR"/>
+                                        <constraint firstAttribute="width" constant="25" id="irL-2u-gue"/>
+                                    </constraints>
+                                </imageView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vPU-i2-sbL" customClass="BackGroundButton" customModule="OSCAR" customModuleProvider="target">
+                                    <rect key="frame" x="30" y="378" width="260" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="xz4-Dl-VNM"/>
+                                    </constraints>
+                                    <state key="normal" title="Delete Account">
+                                        <color key="titleColor" systemColor="tintColor"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="localizedTitle" value="save"/>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isRedButton" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="deleteAccountTapped:" destination="-1" eventType="touchUpInside" id="oya-aZ-niu"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" name="LightBackground"/>
+                            <constraints>
+                                <constraint firstItem="kOr-CS-650" firstAttribute="top" secondItem="Tf0-7R-xEx" secondAttribute="bottom" constant="25" id="11q-G3-oru"/>
+                                <constraint firstAttribute="bottom" secondItem="vPU-i2-sbL" secondAttribute="bottom" id="3KN-Mi-iL9"/>
+                                <constraint firstItem="JxE-sl-aa8" firstAttribute="centerY" secondItem="eAI-ga-DLi" secondAttribute="centerY" id="8XB-Ak-UCn"/>
+                                <constraint firstItem="JxE-sl-aa8" firstAttribute="centerX" secondItem="eAI-ga-DLi" secondAttribute="centerX" id="9xG-mk-a4c"/>
+                                <constraint firstItem="vPU-i2-sbL" firstAttribute="leading" secondItem="PZB-8f-661" secondAttribute="leading" constant="30" id="Bsd-SG-rJ2"/>
+                                <constraint firstItem="kOr-CS-650" firstAttribute="leading" secondItem="Tf0-7R-xEx" secondAttribute="leading" id="IjT-hZ-zBy"/>
+                                <constraint firstAttribute="trailing" secondItem="Tf0-7R-xEx" secondAttribute="trailing" constant="30" id="R0f-hP-AKf"/>
+                                <constraint firstItem="Tf0-7R-xEx" firstAttribute="top" secondItem="eAI-ga-DLi" secondAttribute="bottom" constant="20" id="Rbx-bF-j3F"/>
+                                <constraint firstItem="vPU-i2-sbL" firstAttribute="top" secondItem="kOr-CS-650" secondAttribute="bottom" constant="15" id="Wtn-PB-jY6"/>
+                                <constraint firstItem="kOr-CS-650" firstAttribute="trailing" secondItem="Tf0-7R-xEx" secondAttribute="trailing" id="dXA-a9-KjL"/>
+                                <constraint firstItem="eAI-ga-DLi" firstAttribute="top" secondItem="PZB-8f-661" secondAttribute="top" constant="15" id="lJl-Hv-as9"/>
+                                <constraint firstItem="eAI-ga-DLi" firstAttribute="centerX" secondItem="PZB-8f-661" secondAttribute="centerX" id="rhJ-Kx-BBX"/>
+                                <constraint firstItem="Tf0-7R-xEx" firstAttribute="leading" secondItem="PZB-8f-661" secondAttribute="leading" constant="30" id="slf-0t-0Sr"/>
+                                <constraint firstAttribute="trailing" secondItem="vPU-i2-sbL" secondAttribute="trailing" constant="30" id="vcw-vb-JyI"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="PZB-8f-661" secondAttribute="bottom" id="YOm-5X-Ucg"/>
+                        <constraint firstAttribute="trailing" secondItem="PZB-8f-661" secondAttribute="trailing" id="aqT-oO-bq7"/>
+                        <constraint firstItem="PZB-8f-661" firstAttribute="leading" secondItem="sXD-BC-i2T" secondAttribute="leading" id="h3k-EZ-kT4"/>
+                        <constraint firstItem="PZB-8f-661" firstAttribute="top" secondItem="sXD-BC-i2T" secondAttribute="top" id="l0W-nS-loW"/>
+                    </constraints>
+                </scrollView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SRb-xG-8aS">
+                    <rect key="frame" x="0.0" y="25" width="105" height="35"/>
+                    <connections>
+                        <action selector="backAction:" destination="-1" eventType="touchUpInside" id="ykf-2d-uLz"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="LightBackground"/>
+            <constraints>
+                <constraint firstItem="VfB-MH-N3K" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="GPE-aM-sO3"/>
+                <constraint firstItem="VfB-MH-N3K" firstAttribute="centerY" secondItem="Wuc-gG-WJi" secondAttribute="centerY" id="SaN-EY-XmL"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sXD-BC-i2T" secondAttribute="trailing" id="UsW-Dr-cnY"/>
+                <constraint firstItem="SRb-xG-8aS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="VYx-qA-A0s"/>
+                <constraint firstItem="VfB-MH-N3K" firstAttribute="leading" secondItem="SRb-xG-8aS" secondAttribute="trailing" id="XeV-9i-fKv"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="sXD-BC-i2T" secondAttribute="bottom" id="Y7X-Xd-op7"/>
+                <constraint firstItem="SRb-xG-8aS" firstAttribute="bottom" secondItem="VfB-MH-N3K" secondAttribute="bottom" id="Y7d-O9-tYx"/>
+                <constraint firstItem="PZB-8f-661" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="bGJ-Jl-V8M"/>
+                <constraint firstItem="sXD-BC-i2T" firstAttribute="top" secondItem="VfB-MH-N3K" secondAttribute="bottom" constant="5" id="ezZ-tE-xth"/>
+                <constraint firstItem="SRb-xG-8aS" firstAttribute="top" secondItem="VfB-MH-N3K" secondAttribute="top" id="gB8-yg-f78"/>
+                <constraint firstItem="Wuc-gG-WJi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="36" id="hqD-Ce-1Fq"/>
+                <constraint firstItem="sXD-BC-i2T" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="o7u-PQ-JSk"/>
+                <constraint firstItem="VfB-MH-N3K" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="sB2-1Z-6Aa"/>
+            </constraints>
+            <point key="canvasLocation" x="33.75" y="84.507042253521121"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="backArrow" width="32" height="45"/>
+        <image name="camera" width="23" height="18"/>
+        <image name="logo" width="180" height="59"/>
+        <namedColor name="LightBackground">
+            <color red="0.96100002527236938" green="0.96100002527236938" blue="0.96100002527236938" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

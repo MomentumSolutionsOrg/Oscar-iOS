@@ -1,0 +1,12 @@
+
+/* Class = "UILabel"; text = "Guest"; ObjectID = "9n8-xB-kwR"; */
+"9n8-xB-kwR.text" = "زائر";
+
+/* Class = "UILabel"; text = "Delivery to:"; ObjectID = "Iqg-lp-KlI"; */
+"Iqg-lp-KlI.text" = "توصيل إلى: ";
+
+/* Class = "UILabel"; text = "No Location Found"; ObjectID = "not-Ox-1Pv"; */
+"not-Ox-1Pv.text" = "لم يتم العثور على موقع";
+
+/* Class = "UIButton"; normalTitle = "Set Your Branch v"; ObjectID = "rEj-iL-wH9"; */
+"rEj-iL-wH9.normalTitle" = "تعيين فرعك  ⌄";

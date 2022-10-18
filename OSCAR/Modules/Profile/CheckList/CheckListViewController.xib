@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CheckListViewController" customModule="OSCAR" customModuleProvider="target">
+            <connections>
+                <outlet property="checkListTableView" destination="SPF-Lg-zYQ" id="onv-CL-LX0"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GbI-qK-TUx" customClass="BottomShadowView" customModule="OSCAR" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="T5S-4D-d5i">
+                            <rect key="frame" x="152" y="10" width="110" height="36"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="110" id="MUP-kD-uGn"/>
+                                <constraint firstAttribute="height" constant="36" id="YXU-qc-EFF"/>
+                            </constraints>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XZU-6P-iDS">
+                            <rect key="frame" x="32" y="15.5" width="20" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="20" id="4rk-XG-cqW"/>
+                                <constraint firstAttribute="height" constant="25" id="9Ng-fu-bU6"/>
+                            </constraints>
+                            <state key="normal" image="backArrow"/>
+                            <connections>
+                                <action selector="backButtonTapped:" destination="-1" eventType="touchUpInside" id="QUE-Zm-FSw"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X1i-kg-joH">
+                            <rect key="frame" x="0.0" y="0.0" width="152" height="56"/>
+                            <connections>
+                                <action selector="backButtonTapped:" destination="-1" eventType="touchUpInside" id="gaK-3X-T6q"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" name="LightBackground"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="X1i-kg-joH" secondAttribute="bottom" id="2nc-LZ-TjP"/>
+                        <constraint firstAttribute="bottom" secondItem="T5S-4D-d5i" secondAttribute="bottom" constant="10" id="52l-VW-TuC"/>
+                        <constraint firstItem="T5S-4D-d5i" firstAttribute="centerX" secondItem="GbI-qK-TUx" secondAttribute="centerX" id="8sE-p1-jeb"/>
+                        <constraint firstItem="XZU-6P-iDS" firstAttribute="leading" secondItem="GbI-qK-TUx" secondAttribute="leading" constant="32" id="ImV-qY-eYl"/>
+                        <constraint firstItem="T5S-4D-d5i" firstAttribute="leading" secondItem="X1i-kg-joH" secondAttribute="trailing" id="LKm-P5-BCr"/>
+                        <constraint firstItem="T5S-4D-d5i" firstAttribute="centerY" secondItem="GbI-qK-TUx" secondAttribute="centerY" id="SLc-2b-MRZ"/>
+                        <constraint firstItem="X1i-kg-joH" firstAttribute="top" secondItem="GbI-qK-TUx" secondAttribute="top" id="hEn-wD-wtP"/>
+                        <constraint firstItem="X1i-kg-joH" firstAttribute="leading" secondItem="GbI-qK-TUx" secondAttribute="leading" id="n8H-oR-Hq9"/>
+                        <constraint firstItem="XZU-6P-iDS" firstAttribute="centerY" secondItem="T5S-4D-d5i" secondAttribute="centerY" id="pSM-sp-8su"/>
+                        <constraint firstItem="T5S-4D-d5i" firstAttribute="top" secondItem="GbI-qK-TUx" secondAttribute="top" constant="10" id="zhz-fR-i5c"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="SPF-Lg-zYQ" customClass="SelfSizedTableView" customModule="OSCAR" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="110" width="414" height="718"/>
+                    <color key="backgroundColor" name="LightBackground"/>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="LightBackground"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="SPF-Lg-zYQ" secondAttribute="trailing" id="AJv-hI-ru2"/>
+                <constraint firstItem="SPF-Lg-zYQ" firstAttribute="top" secondItem="GbI-qK-TUx" secondAttribute="bottom" constant="10" id="QCq-N4-9LB"/>
+                <constraint firstItem="GbI-qK-TUx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="SBa-qU-Mr0"/>
+                <constraint firstItem="SPF-Lg-zYQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="axB-l5-e2A"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="GbI-qK-TUx" secondAttribute="trailing" id="eHW-cU-i4h"/>
+                <constraint firstItem="GbI-qK-TUx" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="j3Z-4I-aeK"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="SPF-Lg-zYQ" secondAttribute="bottom" constant="34" id="waJ-Em-Aa0"/>
+            </constraints>
+            <point key="canvasLocation" x="84" y="50"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="backArrow" width="32" height="45"/>
+        <image name="logo" width="180" height="59"/>
+        <namedColor name="LightBackground">
+            <color red="0.96100002527236938" green="0.96100002527236938" blue="0.96100002527236938" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -1,0 +1,33 @@
+
+/* Class = "UIButton"; normalTitle = "+"; ObjectID = "CTe-CO-4wU"; */
+"CTe-CO-4wU.normalTitle" = "+";
+
+/* Class = "UILabel"; text = "1"; ObjectID = "G8I-Kq-v6k"; */
+"G8I-Kq-v6k.text" = "1";
+
+/* Class = "UIButton"; normalTitle = "-"; ObjectID = "Wkc-XT-lSS"; */
+"Wkc-XT-lSS.normalTitle" = "-";
+
+/* Class = "UIButton"; normalTitle = "250 g"; ObjectID = "X8P-Xr-QDf"; */
+"X8P-Xr-QDf.normalTitle" = "1 Kg";
+
+/* Class = "UILabel"; text = "Pastries & Desserts"; ObjectID = "gJq-QQ-Tx5"; */
+"gJq-QQ-Tx5.text" = "Pastries & Desserts";
+
+/* Class = "UILabel"; text = "Description"; ObjectID = "iPi-pQ-BTR"; */
+"iPi-pQ-BTR.text" = "Description";
+
+/* Class = "UIButton"; normalTitle = "Add to cart"; ObjectID = "kro-rv-rlU"; */
+"kro-rv-rlU.normalTitle" = "Add to cart";
+
+/* Class = "UILabel"; text = "EGP 14"; ObjectID = "oOH-Se-6xQ"; */
+"oOH-Se-6xQ.text" = "EGP 14";
+
+/* Class = "UILabel"; text = "White Chocolate Donuts 200 GM"; ObjectID = "qwo-0E-Dp6"; */
+"qwo-0E-Dp6.text" = "White Chocolate Donuts 200 GM";
+
+/* Class = "UILabel"; text = "EGP 14"; ObjectID = "wmZ-18-gAC"; */
+"wmZ-18-gAC.text" = "EGP 14";
+
+/* Class = "UILabel"; text = "You May Also Like"; ObjectID = "zF4-av-wpP"; */
+"zF4-av-wpP.text" = "You May Also Like";

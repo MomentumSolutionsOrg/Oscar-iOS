@@ -1,0 +1,180 @@
+/* 
+  Localizable.strings
+  OSCAR
+
+  Created by Asmaa Tarek on 27/06/2021.
+  
+*/
+
+"lang" = "en";
+
+//MARK: - General
+
+"OK" = "OK";
+"EGP" = "EGP";
+"%off" = " % off";
+"EGP_off" = " EGP off";
+"cancel" = "Cancel";
+"off" = "off";
+"done" = "Done";
+"save" = "Save";
+"out_of_stock" = "Out of stock";
+"add_to_cart" = "Add to cart";
+
+//MARK: - Side Menu
+
+"Departments" = "Departments";
+"about_us" = "About us";
+"contact_us" = "Contact us";
+"terms_and_conditions" = "Terms And Conditions";
+"How_to_use_the_app" = "How To Use The App";
+
+//MARK: - Auth
+
+"forgot_password" = "Forgot Password";
+"donot_have_account" = "Don’t have an account ? Sign Up";
+"login" = "Login";
+"Kindly contact us on" = "Kindly contact us on ";
+
+//MARK: - Offers
+"members" = "Members";
+"magazines" = "Magazines";
+"weekends" = "Weekends";
+
+//MARK: - Order
+"check_status" = "Checking Status...";
+"pending" = "Pending";
+"assigned" = "Assigned";
+"preparing" = "Preparing";
+"on_the_way" = "On The Way";
+"completed" = "Completed";
+"track" = "Track";
+"reorder" = "Reorder";
+"copied_to_clipboard" = "Copied to Clipboard";
+"pay_cash_on-delivery" = "PAY CASH ON DELIVERY";
+"pay_card_upon_delievery" = "PAY CARD UPON DELIVERY";
+"results" = "Results";
+"shop_now" = "Shop Now";
+
+//MARK: - Tabbar
+"shopping_cart" = "Shopping Cart";
+"deals_offers" = "Deals & Offers";
+"my_favorites" = "My Favorites";
+"total_cart" = "Total Cart";
+
+//MARK: - Alert Messages
+
+"fill_all_fields" = "Please fill all fields";
+"enter_email" = "Please enter email";
+"email_validation_message" = "Please enter valid email";
+"enter_verfication_code" = "Please enter verification code";
+"passwords_donot_match" = "Passwords don't match";
+"access_location_message" = "We need access to your location to choose the nearest branch and delivery address";
+"product_not_found" = "Product not found";
+"product_not_available" = "Product not available";
+"no_items_in_cart" = "There are no items in your cart.";
+"you_have" = "You have ";
+"products_in_cart" = " products in the cart";
+"warning" = "Warning!";
+"price_may_change" = "Items price with offers may change at the scheduled time";
+"select_your_address" = "Select your address";
+"place_out_of_zone" = "Your place is out of zone";
+"no_offers_available" = "No Offers Available";
+"no_items_in_favorite" = "There are no items in your favorite list";
+"login_first" = "Please Login First";
+"profile_updated_successfully" = "Profile Updated Successfully";
+"general_error" = "Something went wrong, Please try again later";
+"no_order_to_track" = "No Orders to Track";
+"no_saved_addresses" = "There are no saved addresses";
+"no_search_result" = "No Search Result";
+"nothing_to_filter" = "Nothing to filter";
+"nothing_to_sort" = "Nothing to sort";
+"check_internet_connection" = "Check your internet connection";
+"bad_api_request" = "Bad Api Request";
+"unexpected_error_occured" = "Unexpected error occurred";
+"canot_connect_to_server" = "Cannot connect to the server";
+"connection_timedout" = "Connection timed out";
+"items_added_to_cart" = "Items added to cart";
+"wishlist_add_message" = "Some items may not be available in current branch, Consider changing to different branch if items not visible in your cart";
+"please_wait_check_status" = "Please wait for checking the status";
+"thirty_item_message" = "We hope you are enjoying your online shopping experience! Due to the large number of products added to your cart, please allow for additional delivery time of up to 60 minutes.";
+"choose_delivery_option" = "Please choose delivery option";
+"contact_us_message" = "Request Sent, we will reach you soon";
+
+//MARK: - Profile
+
+"address" = "Address";
+"barcode" = "My Barcode";
+"orders" = "My Orders";
+"vouchers" = "Vouchers";
+"choose_source_type" = "Select photo from";
+"camera" = "Camera";
+"photo" = "Photo";
+"profile" = "Profile";
+"phone_number_error" = "Please enter a valid phone number";
+
+
+// MOSTAFA
+
+"about_us_html" = "<div class=\"container  \">
+<div class=\"contact my-3\">
+<div class=\"row\">
+
+<div class=\"col-md-9\">
+<p style=\"color: black  !important;\"></p><p>ABOUT US&nbsp;</p>
+<p>Welcome to the world of Oscar! Since 1982 we have been working hard to achieve and maintain our reputation as the favored shopping destination for all those who seek a wide variety of high quality products at optimum prices.&nbsp;</p>
+<p>&nbsp;</p>
+<p>We pride ourselves in being the first local hypermarket to provide an unparalleled enjoyable shopping experience with such a large variety of offerings that is also cost effective at the same time.&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>OSCAR GRAND STORES</strong></p>
+<p>Oscar’s Flagship Grand Store is located at <em>425 Street 90, 5th Settlement, New Cairo</em>. It is an impressive 4 floor shopping experience. A true one stop shop for all your grocery,&nbsp; home &amp; lifestyle needs. Spanning across 20 departments. Oscar Grand Stores&nbsp; provides a large variety of fruits &amp; vegetables, local &amp; imported meat &amp; poultry, seafood, cheese &amp; deli, bakery, groceries, cosmetics, home &amp; furnishings, electronics, cleaning &amp; household appliances and so much more! Check out our newly refurbished FISH &amp; SEAFOOD area where you can pick your fresh fish and even request for it to be cleaned, prepped and cooked just the way you like it!&nbsp;</p>
+<p>Our Oscar Grand Store is also the location of our two homegrown restaurant brands: Michaels offering a vibrant International cuisine with specialty pizza &amp; Aslahan; an oriental grill where you can sit comfortably &amp; take a well-deserved break from shopping. Our restaurants offer indoor &amp; outdoor dine-in areas, take-away and delivery.&nbsp;</p>
+<p>Oscar Grand Stores also offers an indoor coffee corner &amp; seating area. The second floor hosts a dine-in seating area by the Ready Meals Buffet where you can enjoy breakfast, lunch or dinner. Oscar Grand Stores has a FREE PARKING garage dedicated to all our customers.&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>OSCAR STORES</strong></p>
+<p>Oscar Stores are located at 105<em> Omar Bin Khattab St, Heliopolis </em>&amp;<em> Rayhanah Plaza, Zahraa El Maadi St. Maadi&nbsp;</em></p>
+<p>Our newest &amp; oldest stores respectively, house all the same departments offered at Oscar Grand Store in&nbsp; more compact spaces. At Oscar stores you will find lots of varieties of fruits &amp; vegetables, local &amp; imported meat &amp; poultry, seafood, cheese &amp; deli, bakery, groceries, cosmetics, home &amp; furnishings, electronics, cleaning &amp; household appliances. Our Fish &amp; Seafood stations at Oscar Stores also offer cleaning, prepping &amp; cooking services. Our Oscar Zahraa El Maadi Store offers an in-house coffee corner &amp; seating area where you can enjoy freshly baked products from our bakery or full ready meals from our buffets for breakfast, lunch or dinner.&nbsp;</p>
+<p>FREE PARKING IS AVAILABLE in our Zahraa El Maadi Oscar Store.&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>OSCAR SIGNATURE</strong></p>
+<p>Our Oscar Signature Store is located in<em> Sun Mall, 26th July St. Zamalek. </em>Oscar Signature offers the highest quality, top-of-the-range products at optimum prices. It is a smaller, more convenient store where you can still find all your grocery needs and get the full Oscar shopping experience in the heart of the bustling Zamalek island. Oscar Signature store serves the full Downtown Area including Mohandessin, Dokki, Agouza, Giza (areas), Garden City, Downtown, Corniche El Nil.&nbsp;</p>
+<p>PARKING IS AVAILABLE INSIDE THE ARMED FORCES OFFICERS CLUB</p>
+<p>&nbsp;</p>
+<p><strong>THE OSCAR FAMILY</strong></p>
+<p>&nbsp;We have built this family business on the solid pillars of trust, dedication &amp; loyalty to our Oscar team and to you, our beloved customers, and that's why we pledge to always be ‘your trusted market’. Our retail experts travel around the globe curating the very best products to ensure that you have the freshest and finest quality ingredients conveniently available year-round.&nbsp;</p>
+<p>Our current 4 locations in The Fifth Settlement, Heliopolis, Maadi &amp; Zamalek all display an impressive array of products and have been upgraded and designed to make your shopping trips a family affair worth looking forward to! We are always loyal to our community of shoppers so we launched a Member’s Promotion Program where you can enjoy exclusive discounts and offers and are soon launching our very own loyalty program and online wallet.&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>OSCAR ONLINE&nbsp;</strong></p>
+<p>Because we prioritize your convenience in today’s fast paced world, we have also recently launched our very own Oscar App available on the App Store &amp; Google Play. You can also shop from our website www.oscarstores.com You can also WhatsApp your order to our business account on +2010 5040 3443 or call us on 16991 and we will deliver to your doorstep. If you choose to visit our stores, and we encourage you to do so, we provide ample parking space and assistance to ease your shopping experience.&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>OSCAR ORIGINALS&nbsp;</strong></p>
+<p>&nbsp;Oscar is well renowned for our signature products. Our delicious and memorable baked goods, celebration pastries, cakes, dairy products &amp; desserts have quickly become the staple of many families’ celebrations and traditions passed on from one generation to the next. We make these in our own state-of-the-art facilities abiding by the highest international health &amp; safety standards and with such pride and finesse that it was only suitable to rebrand and rename them; ‘Oscar Originals’</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p><p></p>
+</div>
+</div>
+</div>
+</div>";
+
+
+"nothing_to_add" = "Nothing selected";
+
+//MARK: - BARCODE
+
+"SCAN_BARCODE_TITLE" = "Scan Barcode";
+"BUTTON_CLOSE" = "Close";
+"INFO_DESCRIPTION_TEXT" = "Place the barcode within the window to scan. the search will start automatically.";
+
+//MARK: - Contact Us
+
+"contact_us_1" = "How can we help? There are several ways you can contact Oscar. If you would like to speak to a customer services representative directly please call us on 16991 from inside Egypt.";
+"contact_us_2" = "You can also get in touch by filling in the below form. Our dedicated service team generally responds to all enquiries within 1-3 business days.";
+"first_name" = "First Name";
+"last_name" = "Last Name";
+"your_email" = "Your Email";
+"your_message" = "Your Message";
+"send_message" = "Send Message";
+
+//MARK: - Contact Us
+
+"gram" = "GM";

@@ -1,0 +1,9 @@
+
+/* Class = "UITextField"; placeholder = "Item.."; ObjectID = "dQY-IZ-Iud"; */
+"dQY-IZ-Iud.placeholder" = "Item..";
+
+/* Class = "UILabel"; text = "List item"; ObjectID = "mm0-H5-Gqh"; */
+"mm0-H5-Gqh.text" = "List item";
+
+/* Class = "UILabel"; text = "+"; ObjectID = "nRP-Ty-v8J"; */
+"nRP-Ty-v8J.text" = "+";

@@ -1,0 +1,9 @@
+
+/* Class = "UILabel"; text = "Filter By"; ObjectID = "47r-x6-0qI"; */
+"47r-x6-0qI.text" = "Filter By";
+
+/* Class = "UIButton"; normalTitle = "SHOW RESULTS"; ObjectID = "5ro-t3-aqj"; */
+"5ro-t3-aqj.normalTitle" = "SHOW RESULTS";
+
+/* Class = "UIButton"; normalTitle = "CLEAR FILTERS"; ObjectID = "dMF-I2-2xx"; */
+"dMF-I2-2xx.normalTitle" = "CLEAR FILTERS";
