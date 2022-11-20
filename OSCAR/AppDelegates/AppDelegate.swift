@@ -115,10 +115,6 @@ extension AppDelegate : MessagingDelegate{
             Utils.updateNotificationToken()
         }
         
-
-        
-
-        
         Messaging.messaging()
             .subscribe(toTopic: Constants.NotificationTopic.oscarNotifyiOS.rawValue) { error in
                     if error == nil {

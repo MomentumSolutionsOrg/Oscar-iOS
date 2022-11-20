@@ -60,7 +60,7 @@ class DeleteAccountConfirmationVC: UIViewController {
             }
             
         } else {
-            guard let url = URL(string: "https://oscar.momentum-sol.com/remove-account") else {
+            guard let url = URL(string: NetworkConstants.removeAccountURL) else {
                  return
             }
 

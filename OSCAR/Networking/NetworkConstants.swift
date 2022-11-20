@@ -10,6 +10,7 @@ enum NetworkConstants {
     
     /// Base URLs
     static let baseURL = "http://34.105.27.34/oscar/public/api/"
+    static let removeAccountURL = "https://cms.oscarstoresapp.com/remove-account"
     //"https://oscar.momentum-sol.com/api/"
     //static let imageBaseUrl = "https://oscar.momentum-sol.com/"
     static var storeLangPath:String  {

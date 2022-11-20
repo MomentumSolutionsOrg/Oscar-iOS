@@ -44,7 +44,6 @@ class CheckoutViewController: BaseViewController {
     @IBOutlet weak var totalLabel: UILabel!
     
     var viewModel: CheckoutProcessViewModel!
-//    rntAPI(url: URL(string: "https://oscar.momentum-sol.com/api/")!)
     
     override func viewDidLoad() {
         super.viewDidLoad()
