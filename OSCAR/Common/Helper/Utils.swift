@@ -86,18 +86,22 @@ class Utils {
     }
     
     class func defaultCoordinate() -> String {
-        switch CurrentUser.shared.store {
-        case "01":// Heliopolis
-            return "30.0872215,31.3478606"
-        case "02": // 5th Settlement
-            return "30.027679,31.4908344"
-        case "04":// Zamalek
-            return "30.060472,31.2234871"
-        case "05":// Maadi
-            return "29.9607097,31.2952341"
-        default:
-            return "30.0872215,31.3478606"
-            
-        }
+//        switch CurrentUser.shared.store {
+//        case "01":// Heliopolis
+//            return "30.0872215,31.3456719"
+//        case "02": // 5th Settlement
+//            return "30.0276474,31.4187494"
+//        case "04":// Zamalek
+//            return "30.060472,31.2234871"
+//        case "05":// Maadi
+//            return "29.9611396,31.296972"
+//        default:
+//            return "30.0872215,31.3478606"
+//
+//        }
+        
+        return UserDefaultsManager.shared.getStringForKey(key: .currentStoreCoordinates) ?? "30.0872261,31.3478552"
     }
 }
+
+

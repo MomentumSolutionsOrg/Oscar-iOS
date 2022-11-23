@@ -26,6 +26,7 @@ enum Constants {
         case token = "token"
         case userData = "user_data"
         case storeId = "store_id"
+        case currentStoreCoordinates = "current_Store_Coordinates"
         case paymentType = "payment_type"
         case checkListCount = "checklist_count"
         case notification = "notification"

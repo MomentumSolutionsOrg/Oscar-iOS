@@ -94,6 +94,15 @@ class CheckoutProcessViewModel: BaseViewModel {
         if coordinates.trim().isEmpty {
             coordinates = Utils.defaultCoordinate()
         }
+        getDeliverFeesFor(coordinates: coordinates)
+    }
+    
+    func fetchClosingTimes() {
+        let coordinates = Utils.defaultCoordinate()
+        getDeliverFeesFor(coordinates: coordinates)
+    }
+    
+    func getDeliverFeesFor(coordinates: String){
         state = .loading
         Api().fireRequestWithSingleResponse(urlConvertible: CheckoutProcessApi.getDeliveryFees(coordinates: coordinates), mappingClass: BaseModel<[DeliveryFees]>.self).get { [weak self] response in
             //            guard let deliveryFees = response?.data else {

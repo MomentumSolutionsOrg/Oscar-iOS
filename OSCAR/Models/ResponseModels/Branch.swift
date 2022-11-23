@@ -18,6 +18,8 @@ struct Branch: Codable {
     let category, status: String?
     let location: String?
     let storeID: String?
+    let latitude: String?
+    let longitude: String?
     let hide, showPrices: Int?
 
     enum CodingKeys: String, CodingKey {
@@ -25,7 +27,7 @@ struct Branch: Codable {
         case headerLogo = "header_logo"
         case category, status, location
         case storeID = "store_id"
-        case hide
+        case hide, latitude, longitude
         case showPrices = "show_prices"
     }
 }

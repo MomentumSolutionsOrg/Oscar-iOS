@@ -36,19 +36,12 @@ class CartViewController: BaseViewController {
     }
     
     @IBAction func nextButtonTapped(_ sender: Any) {
-        if !Date().isClosingTime() {
-            showPopUpForClosingTime()
-        } else {
-            let checkout = CheckoutViewController()
-            checkout.viewModel = viewModel
-            push(checkout)
-        }
-      
+        viewModel.fetchClosingTimes()
     }
     
     func showPopUpForClosingTime() {
         let alert = UIAlertController(title: "", message: "closing_time".localized, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK".localized, style: .cancel) 
+        let okAction = UIAlertAction(title: "OK".localized, style: .cancel)
         alert.addAction(okAction)
         present(alert)
     }
@@ -82,8 +75,24 @@ fileprivate extension CartViewController {
             self?.showAlert(message: "thirty_item_message".localized)
         }
         
+        
+        viewModel.getDeliveryFeesCompletion = { [weak self] in
+            guard let self = self else {return}
+            if  !self.viewModel.deliveryFees.isEmpty {
+
+                self.pushCheckoutViewController()
+            } else {
+                self.showPopUpForClosingTime()
+            }
+        }
+        
     }
     
+    func pushCheckoutViewController(){
+        let checkout = CheckoutViewController()
+        checkout.viewModel = viewModel
+        push(checkout)
+    }
     func setupTableView() {
         cartItemsTableView.delegate = self
         cartItemsTableView.dataSource = self

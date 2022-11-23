@@ -18,6 +18,8 @@ class HomeViewModel:BaseViewModel {
     }
     var selectedBranch:Branch? {
         didSet {
+            let coordinates = "\(selectedBranch?.latitude ?? ""),\(selectedBranch?.longitude ?? "")"
+            UserDefaultsManager.shared.saveInUserDefault(key: .currentStoreCoordinates, data: coordinates)
             CurrentUser.shared.store = selectedBranch?.storeID ?? "01"
             Utils.checkCart()
         }

@@ -32,7 +32,7 @@ class HomeVC: BaseViewController {
         super.viewWillAppear(animated)
        
         setupUserData()
-        
+      
     }
     
     override func viewDidAppear(_ animated: Bool) {
