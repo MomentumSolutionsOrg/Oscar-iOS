@@ -21,6 +21,7 @@ class CheckoutViewController: BaseViewController {
     @IBOutlet weak var cardOnDeliveryCheckImageView: UIImageView!
     @IBOutlet weak var masterCardLabel: UILabel!
     @IBOutlet weak var masterCardImageView: UIImageView!
+    
     //MARK: - Delivery Options Outlets
     
     @IBOutlet weak var deliveryTypesTableView: SelfSizedTableView! {
@@ -49,13 +50,16 @@ class CheckoutViewController: BaseViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setupViews()
+        
         setupViewModel()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.fetchAddresses()
+        
     }
+    
     func setupViews() {
         viewModel.selectedPaymentType = {
             if CurrentUser.shared.defaultPaymentType == Constants.PaymentMethodTypes.cashOnDelivery.rawValue {
@@ -90,6 +94,8 @@ class CheckoutViewController: BaseViewController {
         alert.addAction(okAction)
         present(alert)
     }
+    
+
     
     func openDatePicker() {
         let pickerViewController = SelectDateViewController()

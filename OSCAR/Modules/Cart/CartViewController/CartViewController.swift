@@ -36,9 +36,21 @@ class CartViewController: BaseViewController {
     }
     
     @IBAction func nextButtonTapped(_ sender: Any) {
-        let checkout = CheckoutViewController()
-        checkout.viewModel = viewModel
-        push(checkout)
+        if !Date().isClosingTime() {
+            showPopUpForClosingTime()
+        } else {
+            let checkout = CheckoutViewController()
+            checkout.viewModel = viewModel
+            push(checkout)
+        }
+      
+    }
+    
+    func showPopUpForClosingTime() {
+        let alert = UIAlertController(title: "", message: "closing_time".localized, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK".localized, style: .cancel) 
+        alert.addAction(okAction)
+        present(alert)
     }
 }
 

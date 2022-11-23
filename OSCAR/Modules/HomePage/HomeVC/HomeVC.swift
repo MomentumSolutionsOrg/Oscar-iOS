@@ -6,6 +6,7 @@
 
 import DropDown
 import BarcodeScanner
+import Foundation
 
 class HomeVC: BaseViewController {
     
@@ -31,6 +32,7 @@ class HomeVC: BaseViewController {
         super.viewWillAppear(animated)
        
         setupUserData()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -29,7 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
         
         let siren = Siren.shared
-        siren.rulesManager = RulesManager(globalRules: .critical,
+        siren.rulesManager = RulesManager(globalRules: .default,
                                           showAlertAfterCurrentVersionHasBeenReleasedForDays: 0)
     
         Siren.shared.wail()

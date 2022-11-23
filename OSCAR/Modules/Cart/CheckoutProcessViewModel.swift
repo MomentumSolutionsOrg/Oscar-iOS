@@ -149,6 +149,7 @@ class CheckoutProcessViewModel: BaseViewModel {
     }
     
     func total() -> Double {
+     
         let deliveryFees = Double(selectedDelivery?.cost ?? "20") ?? 20.0
         return round((subtotalAfterDiscount + deliveryFees) * 100 ) / 100
     }
