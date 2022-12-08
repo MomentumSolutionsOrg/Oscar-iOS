@@ -13,6 +13,12 @@ import FirebaseMessaging
 import UserNotifications
 import Siren
 import FirebaseInstallations
+import FacebookCore
+import AppTrackingTransparency
+import FBAudienceNetwork
+import AdSupport
+import SwiftUI
+
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         super.init()
         UIFont.overrideInitialize()
     }
+    
+
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -28,11 +36,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         LanguageManager.shared.changeSemanticContentAttribute()
         NetworkMonitor.shared.startMonitoring()
         setupPushNotifications(for: application)
+        ApplicationDelegate.shared.application(application,didFinishLaunchingWithOptions: launchOptions)
         window = UIWindow(frame: UIScreen.main.bounds)
         checkIsLoggedIn()
         window?.makeKeyAndVisible()
 
-
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {[weak self] in
+                 self?.requestTracking()
+             }
         let siren = Siren.shared
         siren.rulesManager = RulesManager(globalRules: .default,
                                           showAlertAfterCurrentVersionHasBeenReleasedForDays: 0)
@@ -44,19 +55,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-//    func application(
-//        _ app: UIApplication,
-//        open url: URL,
-//        options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-//
-//            ApplicationDelegate.shared.application(
-//            app,
-//            open: url,
-//            sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
-//            annotation: options[UIApplication.OpenURLOptionsKey.annotation]
-//        )
-//
-//    }
+    func requestTracking(){
+        if #available(iOS 14, *) {
+            ATTrackingManager.requestTrackingAuthorization(completionHandler: { (status) in
+                switch status{
+                case .authorized:
+                    FBAdSettings.setAdvertiserTrackingEnabled(true)
+                    Settings.isAutoLogAppEventsEnabled = true
+                    Settings.isAdvertiserIDCollectionEnabled = true
+                    break
+                    
+                case .denied:
+                    FBAdSettings.setAdvertiserTrackingEnabled(false)
+                    Settings.isAutoLogAppEventsEnabled = false
+                    Settings.isAdvertiserIDCollectionEnabled = false
+                    
+                    break
+                default:
+                    break
+                }
+            })
+        }
+    }
+    
+    func application(
+        _ app: UIApplication,
+        open url: URL,
+        options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+
+            ApplicationDelegate.shared.application(
+            app,
+            open: url,
+            sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+            annotation: options[UIApplication.OpenURLOptionsKey.annotation]
+        )
+
+    }
     
     private func checkIsLoggedIn() {
         CurrentUser.shared.defaultPaymentType = UserDefaultsManager.shared.getIntForKey(key: .paymentType) ?? 0

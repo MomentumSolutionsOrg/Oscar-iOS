@@ -249,6 +249,7 @@
 		767B2F162688914A003A70AD /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767B2F142688914A003A70AD /* ProfileCell.swift */; };
 		767B2F172688914A003A70AD /* ProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 767B2F152688914A003A70AD /* ProfileCell.xib */; };
 		767B2F192688989D003A70AD /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767B2F182688989D003A70AD /* ProfileViewModel.swift */; };
+		8CB75BA429420ADE00936E06 /* Pods_OSCAR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 896B2E5D9CA20ED35A452B42 /* Pods_OSCAR.framework */; };
 		CE70FCCF26D65B2800717ECE /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE70FCCE26D65B2700717ECE /* DateExtension.swift */; };
 		CE70FCD326D7C90000717ECE /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE70FCD226D7C8FE00717ECE /* UITextFieldExtension.swift */; };
 		CE9EC72726CF35B9007D1B69 /* SideMenuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9EC72926CF35B9007D1B69 /* SideMenuVC.xib */; };
@@ -295,7 +296,6 @@
 		CEF17ABD26DB964400607CB2 /* CustomDropDownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF17ABB26DB964400607CB2 /* CustomDropDownCell.swift */; };
 		CEF17ABE26DB964400607CB2 /* CustomDropDownCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF17ABC26DB964400607CB2 /* CustomDropDownCell.xib */; };
 		CEF73A5C26D5D1FD00CFA887 /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF73A5B26D5D1FD00CFA887 /* BundleExtension.swift */; };
-		E5E72F8E442EB645E48AD429 /* Pods_OSCAR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 896B2E5D9CA20ED35A452B42 /* Pods_OSCAR.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -424,7 +424,7 @@
 		565D33FD2688B17A00A4D982 /* DefaultSideMenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DefaultSideMenuTableViewCell.xib; sourceTree = "<group>"; };
 		565D34012688B19C00A4D982 /* ExpandingSideMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandingSideMenuTableViewCell.swift; sourceTree = "<group>"; };
 		565D34022688B19C00A4D982 /* ExpandingSideMenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpandingSideMenuTableViewCell.xib; sourceTree = "<group>"; };
-		56611707267FDA5C00E2B0EC /* OSCAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OSCAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		56611707267FDA5C00E2B0EC /* Oscar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Oscar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5661170A267FDA5C00E2B0EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5661170C267FDA5C00E2B0EC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		56611713267FDA5D00E2B0EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -706,7 +706,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5E72F8E442EB645E48AD429 /* Pods_OSCAR.framework in Frameworks */,
+				8CB75BA429420ADE00936E06 /* Pods_OSCAR.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1302,7 +1302,7 @@
 		56611708267FDA5C00E2B0EC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				56611707267FDA5C00E2B0EC /* OSCAR.app */,
+				56611707267FDA5C00E2B0EC /* Oscar.app */,
 				617B2D3328B5194B00DB1CCA /* NotificationService.appex */,
 			);
 			name = Products;
@@ -2203,8 +2203,10 @@
 				617B2D3928B5194B00DB1CCA /* PBXTargetDependency */,
 			);
 			name = OSCAR;
+			packageProductDependencies = (
+			);
 			productName = OSCAR;
-			productReference = 56611707267FDA5C00E2B0EC /* OSCAR.app */;
+			productReference = 56611707267FDA5C00E2B0EC /* Oscar.app */;
 			productType = "com.apple.product-type.application";
 		};
 		617B2D3228B5194B00DB1CCA /* NotificationService */ = {
@@ -2251,6 +2253,8 @@
 				ar,
 			);
 			mainGroup = 566116FE267FDA5B00E2B0EC;
+			packageReferences = (
+			);
 			productRefGroup = 56611708267FDA5C00E2B0EC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -3125,6 +3129,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = Oscar;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -3180,6 +3185,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = Oscar;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -3197,7 +3203,7 @@
 				CODE_SIGN_ENTITLEMENTS = OSCAR/OSCAR.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4.6;
+				CURRENT_PROJECT_VERSION = 4.8;
 				DEVELOPMENT_TEAM = 6U3ELYT3M7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3209,9 +3215,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 7.5;
+				MARKETING_VERSION = 7.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.msolapps.oscar;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Oscar;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -3228,7 +3234,7 @@
 				CODE_SIGN_ENTITLEMENTS = OSCAR/OSCAR.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4.6;
+				CURRENT_PROJECT_VERSION = 4.8;
 				DEVELOPMENT_TEAM = 6U3ELYT3M7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3240,9 +3246,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 7.5;
+				MARKETING_VERSION = 7.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.msolapps.oscar;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Oscar;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

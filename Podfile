@@ -16,6 +16,10 @@ target 'OSCAR' do
   pod 'Firebase/Database'
   pod 'Firebase/Messaging'
   pod 'Firebase/InAppMessaging'
+  pod 'FBSDKLoginKit'
+  pod 'FBSDKCoreKit'
+  pod 'FBAudienceNetwork'
+  pod 'FacebookShare'
   pod 'DropDown'
   pod 'BarcodeScanner'
   pod "TTRangeSlider"

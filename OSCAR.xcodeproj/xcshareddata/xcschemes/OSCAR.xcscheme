@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "56611706267FDA5B00E2B0EC"
-               BuildableName = "OSCAR.app"
+               BuildableName = "Oscar.app"
                BlueprintName = "OSCAR"
                ReferencedContainer = "container:OSCAR.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "56611706267FDA5B00E2B0EC"
-            BuildableName = "OSCAR.app"
+            BuildableName = "Oscar.app"
             BlueprintName = "OSCAR"
             ReferencedContainer = "container:OSCAR.xcodeproj">
          </BuildableReference>
@@ -75,7 +75,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "56611706267FDA5B00E2B0EC"
-            BuildableName = "OSCAR.app"
+            BuildableName = "Oscar.app"
             BlueprintName = "OSCAR"
             ReferencedContainer = "container:OSCAR.xcodeproj">
          </BuildableReference>
