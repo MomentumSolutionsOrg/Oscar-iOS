@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         LanguageManager.shared.changeSemanticContentAttribute()
         NetworkMonitor.shared.startMonitoring()
         setupPushNotifications(for: application)
-        ApplicationDelegate.shared.application(application,didFinishLaunchingWithOptions: launchOptions)
+//        ApplicationDelegate.shared.application(application,didFinishLaunchingWithOptions: launchOptions)
         window = UIWindow(frame: UIScreen.main.bounds)
         checkIsLoggedIn()
         window?.makeKeyAndVisible()
@@ -63,12 +63,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //                    Settings.isAutoLogAppEventsEnabled = true
 //                    Settings.isAdvertiserIDCollectionEnabled = true
 //                    break
-//                    
+//
 //                case .denied:
 //                    FBAdSettings.setAdvertiserTrackingEnabled(false)
 //                    Settings.isAutoLogAppEventsEnabled = false
 //                    Settings.isAdvertiserIDCollectionEnabled = false
-//                    
+//
 //                    break
 //                default:
 //                    break
@@ -77,19 +77,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        }
     }
     
-    func application(
-        _ app: UIApplication,
-        open url: URL,
-        options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-
-            ApplicationDelegate.shared.application(
-            app,
-            open: url,
-            sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
-            annotation: options[UIApplication.OpenURLOptionsKey.annotation]
-        )
-
-    }
+//    func application(
+//        _ app: UIApplication,
+//        open url: URL,
+//        options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+//
+//            ApplicationDelegate.shared.application(
+//            app,
+//            open: url,
+//            sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+//            annotation: options[UIApplication.OpenURLOptionsKey.annotation]
+//        )
+//
+//    }
     
     private func checkIsLoggedIn() {
         CurrentUser.shared.defaultPaymentType = UserDefaultsManager.shared.getIntForKey(key: .paymentType) ?? 0
