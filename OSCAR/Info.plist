@@ -58,8 +58,6 @@
 	<string>OSCAR need to acces your current location to help you select your nearest branch and select accurate delivery address</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Oscar wants to access Photo to select images</string>
-	<key>NSUserTrackingUsageDescription</key>
-	<string>Oscar wants to track your location in order to send you personalized Ads</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>SignPainter-HouseScript.ttf</string>

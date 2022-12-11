@@ -40,10 +40,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         checkIsLoggedIn()
         window?.makeKeyAndVisible()
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {[weak self] in
-                 self?.requestTracking()
-             }
+//
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {[weak self] in
+//                 self?.requestTracking()
+//             }
         let siren = Siren.shared
         siren.rulesManager = RulesManager(globalRules: .default,
                                           showAlertAfterCurrentVersionHasBeenReleasedForDays: 0)
