@@ -13,11 +13,10 @@ import FirebaseMessaging
 import UserNotifications
 import Siren
 import FirebaseInstallations
-import FacebookCore
-import AppTrackingTransparency
-import FBAudienceNetwork
-import AdSupport
-import SwiftUI
+//import FacebookCore
+//import AppTrackingTransparency
+//import FBAudienceNetwork
+//import AdSupport
 
 
 @main
@@ -56,26 +55,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func requestTracking(){
-        if #available(iOS 14, *) {
-            ATTrackingManager.requestTrackingAuthorization(completionHandler: { (status) in
-                switch status{
-                case .authorized:
-                    FBAdSettings.setAdvertiserTrackingEnabled(true)
-                    Settings.isAutoLogAppEventsEnabled = true
-                    Settings.isAdvertiserIDCollectionEnabled = true
-                    break
-                    
-                case .denied:
-                    FBAdSettings.setAdvertiserTrackingEnabled(false)
-                    Settings.isAutoLogAppEventsEnabled = false
-                    Settings.isAdvertiserIDCollectionEnabled = false
-                    
-                    break
-                default:
-                    break
-                }
-            })
-        }
+//        if #available(iOS 14, *) {
+//            ATTrackingManager.requestTrackingAuthorization(completionHandler: { (status) in
+//                switch status{
+//                case .authorized:
+//                    FBAdSettings.setAdvertiserTrackingEnabled(true)
+//                    Settings.isAutoLogAppEventsEnabled = true
+//                    Settings.isAdvertiserIDCollectionEnabled = true
+//                    break
+//                    
+//                case .denied:
+//                    FBAdSettings.setAdvertiserTrackingEnabled(false)
+//                    Settings.isAutoLogAppEventsEnabled = false
+//                    Settings.isAdvertiserIDCollectionEnabled = false
+//                    
+//                    break
+//                default:
+//                    break
+//                }
+//            })
+//        }
     }
     
     func application(
