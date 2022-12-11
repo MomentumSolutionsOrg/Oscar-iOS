@@ -42,9 +42,17 @@ class DeepLinkingNavigator {
             if let tabBar = UIApplication.shared.keyWindow?.rootViewController as? MainTabBarController {
                 tabBar.selectedIndex = 1
             }
+        } else {
+           openExternal(link: link)
         }
     }
 
+
+        func openExternal(link: String) {
+            guard let url = URL(string: link) else { return }
+            UIApplication.shared.open(url)
+        }
+    
     private func fetchProduct(for id:String) {
         Api().fireRequestWithSingleResponse(urlConvertible: ProductApi.showProduct(id: id), mappingClass: ProductResponse.self).get { [weak self] response in
             if let product = response.data {
