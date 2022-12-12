@@ -54,7 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    func requestTracking(){
+//    func requestTracking(){
 //        if #available(iOS 14, *) {
 //            ATTrackingManager.requestTrackingAuthorization(completionHandler: { (status) in
 //                switch status{
@@ -75,7 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //                }
 //            })
 //        }
-    }
+//    }
     
 //    func application(
 //        _ app: UIApplication,
@@ -190,7 +190,7 @@ extension AppDelegate : UNUserNotificationCenterDelegate{
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         let userInfo = notification.request.content.userInfo
-        print(userInfo, "👎🏻")
+        print(userInfo)
         completionHandler([.alert,.sound])
     }
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {

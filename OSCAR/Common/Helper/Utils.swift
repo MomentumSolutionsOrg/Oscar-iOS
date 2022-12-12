@@ -52,7 +52,7 @@ class Utils {
 //            if let _ = UserDefaultsManager.shared.getStringForKey(key: .token) {
             
                 Api().fireRequestWithSingleResponse(urlConvertible: AuthApi.fcmToken(token: fCMToken), mappingClass: MessageModel.self).get { response in
-                    print(response.message, "workedddd!!!")
+                    print(response.message)
                 }.catch { error in
                     debugPrint(error.localizedDescription)
                 }

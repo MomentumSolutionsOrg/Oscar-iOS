@@ -29,7 +29,6 @@ class BaseViewModel: NSObject {
     func startRequest<M: Codable>(request: Requestable, mappingClass: M.Type,successCompletion: @escaping((M?) -> Void), showLoading: Bool = true) {
         
         if request.path.contains("products/0?"){
-            print("hna ahoooo")
             return
         }
         

@@ -155,7 +155,6 @@ extension CategoryTableViewCell: UICollectionViewDelegate, UICollectionViewDeleg
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch collectionView {
         case firstCollectionView:
-            print("indexpath --------> \(indexPath.row)")
             var subCategoryIndex: IndexPath?
             if let subCategory = category?.children?[indexPath.row] {
                 if subCategory.id == selectedSubCategory?.id, !secondCollectionView.isHidden {

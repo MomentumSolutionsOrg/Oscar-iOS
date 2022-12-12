@@ -199,7 +199,7 @@ fileprivate extension HomeVC {
     }
     
     func presentNotification() {
-        print("xxx")
+        
         do {
             let notificationObj = try UserDefaultsManager.shared.getObject(forKey: .notification, castTo: NotificationObject.self)
             print(notificationObj.image)

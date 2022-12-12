@@ -22,7 +22,7 @@ protocol Requestable: URLRequestConvertible {
 }
 
 extension Requestable {
-    // method is post by default 🙄
+    // method is post by default 
     
     var method: Alamofire.HTTPMethod {
         return .post

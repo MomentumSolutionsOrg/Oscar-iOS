@@ -22,14 +22,14 @@ class NotificationService: UNNotificationServiceExtension {
     
 
         // Print full message.
-        print(request.content.userInfo, "🥺")
+        print(request.content.userInfo)
 
 
         let yyy = request.content.userInfo["aps"] as? [String:Any]
         let xxx = yyy?["alert"] as? [String:Any]
         let link = request.content.userInfo["link"] as? String
-        print(xxx?["Title"] as? String ?? "", "🙀")
-        print(xxx?["body"] as? String ?? "", "🙀🙀")
+        print(xxx?["Title"] as? String ?? "")
+        print(xxx?["body"] as? String ?? "")
         
         print(link ?? "")
         if request.content.userInfo["attachment"] != nil {
