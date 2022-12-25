@@ -2398,6 +2398,8 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
 			);
 			outputFileListPaths = (
 			);
@@ -2405,7 +2407,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#/usr/local/bin/carthage copy-frameworks\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#/usr/local/bin/carthage copy-frameworks\n\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n\n";
 		};
 		99EB3F2EF86167A34BACD0F7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -3203,8 +3205,10 @@
 				CODE_SIGN_ENTITLEMENTS = OSCAR/OSCAR.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4.9.2;
+				CURRENT_PROJECT_VERSION = 4.9.3;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 6U3ELYT3M7;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -3215,7 +3219,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 8.0;
+				MARKETING_VERSION = 8.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.msolapps.oscar;
 				PRODUCT_NAME = Oscar;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3234,8 +3238,9 @@
 				CODE_SIGN_ENTITLEMENTS = OSCAR/OSCAR.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4.9.2;
+				CURRENT_PROJECT_VERSION = 4.9.3;
 				DEVELOPMENT_TEAM = 6U3ELYT3M7;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -3246,7 +3251,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 8.0;
+				MARKETING_VERSION = 8.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.msolapps.oscar;
 				PRODUCT_NAME = Oscar;
 				PROVISIONING_PROFILE_SPECIFIER = "";

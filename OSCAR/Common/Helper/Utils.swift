@@ -9,8 +9,8 @@ import Firebase
 import IQKeyboardManagerSwift
 import RealmSwift
 import SDWebImageWebPCoder
-import ProgressHUD
 import UIKit
+
 class Utils {
     
     class func initLibraries() {

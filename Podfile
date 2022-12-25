@@ -16,6 +16,8 @@ target 'OSCAR' do
   pod 'Firebase/Database'
   pod 'Firebase/Messaging'
   pod 'Firebase/InAppMessaging'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Crashlytics'
   pod 'FBSDKLoginKit'
   pod 'FBSDKCoreKit'
   pod 'FBAudienceNetwork'
@@ -25,7 +27,6 @@ target 'OSCAR' do
   pod "TTRangeSlider"
   pod 'RealmSwift'
   pod 'SwiftyOverlay'
-  pod 'ProgressHUD'
   pod 'Siren', :git => 'https://github.com/ArtSabintsev/Siren.git', :branch => 'swift5.0' # Swift 5.0
 
 end
