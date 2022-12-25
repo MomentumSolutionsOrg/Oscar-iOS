@@ -9,12 +9,16 @@ import Firebase
 import IQKeyboardManagerSwift
 import RealmSwift
 import SDWebImageWebPCoder
+import ProgressHUD
+import UIKit
 class Utils {
     
     class func initLibraries() {
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = true
         IQKeyboardManager.shared.toolbarDoneBarButtonItemText = "done".localized
+
+
         
         // support .webp extension in images fro iOS < 14
         if #available(iOS 14, *) {
@@ -76,6 +80,7 @@ class Utils {
             }
         }
     }
+
     
     class func shareProduct(with id:String) {
         let items = ["https://www.oscarstores.com/en/show_product/\(id)"]
@@ -99,7 +104,6 @@ class Utils {
 //            return "30.0872215,31.3478606"
 //
 //        }
-        
         return UserDefaultsManager.shared.getStringForKey(key: .currentStoreCoordinates) ?? "30.0872261,31.3478552"
     }
 }

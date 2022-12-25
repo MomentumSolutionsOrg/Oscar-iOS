@@ -25,6 +25,7 @@ target 'OSCAR' do
   pod "TTRangeSlider"
   pod 'RealmSwift'
   pod 'SwiftyOverlay'
+  pod 'ProgressHUD'
   pod 'Siren', :git => 'https://github.com/ArtSabintsev/Siren.git', :branch => 'swift5.0' # Swift 5.0
 
 end

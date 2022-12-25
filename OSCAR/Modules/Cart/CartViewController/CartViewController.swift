@@ -36,7 +36,8 @@ class CartViewController: BaseViewController {
     }
     
     @IBAction func nextButtonTapped(_ sender: Any) {
-        viewModel.fetchClosingTimes()
+//        viewModel.fetchClosingTimes()
+       pushCheckoutViewController()
     }
     
     func showPopUpForClosingTime() {
@@ -77,13 +78,13 @@ fileprivate extension CartViewController {
         
         
         viewModel.getDeliveryFeesCompletion = { [weak self] in
-            guard let self = self else {return}
-            if  !self.viewModel.deliveryFees.isEmpty {
+//            guard let self = self else {return}
+//            if  !self.viewModel.deliveryFees.isEmpty {
 
-                self.pushCheckoutViewController()
-            } else {
-                self.showPopUpForClosingTime()
-            }
+//                self.pushCheckoutViewController()
+//            } else {
+//                self.showPopUpForClosingTime()
+//            }
         }
         
     }

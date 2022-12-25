@@ -50,6 +50,12 @@ class HomeVC: BaseViewController {
         homeTableView.tableFooterView = UIView(frame: .zero)
         
     }
+    func showPopUpForClosingTime() {
+        let alert = UIAlertController(title: "", message: "closing_time".localized, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK".localized, style: .cancel)
+        alert.addAction(okAction)
+        present(alert)
+    }
     @IBAction func barcodeButtonTapped(_ sender: Any) {
         let viewController = BarcodeScannerViewController()
         viewController.codeDelegate = self
@@ -77,10 +83,25 @@ fileprivate extension HomeVC {
     func setupViewmodel() {
         setupViewModel(viewModel: viewModel)
         
+        viewModel.closingTimeCompletion = { [weak self] in
+            guard let self = self else { return }
+            print("???????")
+            
+            if self.viewModel.deliveryFees.isEmpty {
+                
+                self.showPopUpForClosingTime()
+            }
+            
+        }
+        
         viewModel.branchesCompletion = { [weak self] in
             self?.dropDown.dataSource = self?.viewModel.branches.map { $0.title ?? "" } ?? []
             self?.branchButton.setTitle((self?.viewModel.selectedBranch?.title ?? "") + "  ⌄", for: .normal)
-            self?.deliveryLocationLabel.text = self?.viewModel.deliveryLocation
+            
+            DispatchQueue.main.async {
+                self?.deliveryLocationLabel.text = self?.viewModel.deliveryLocation
+            }
+           
         }
         
         viewModel.openSettingCompletion = { [weak self] in

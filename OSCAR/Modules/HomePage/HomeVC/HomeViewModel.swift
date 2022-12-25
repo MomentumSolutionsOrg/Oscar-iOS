@@ -22,6 +22,8 @@ class HomeViewModel:BaseViewModel {
             UserDefaultsManager.shared.saveInUserDefault(key: .currentStoreCoordinates, data: coordinates)
             CurrentUser.shared.store = selectedBranch?.storeID ?? "01"
             Utils.checkCart()
+            getDeliverFeesForClosingTime()
+          
         }
     }
     var deliveryLocation = ""
@@ -45,6 +47,7 @@ class HomeViewModel:BaseViewModel {
     }
     
     private(set) var pinterest = [Slider]()
+    var deliveryFees = [DeliveryFees]()
 
     private(set) var hasSliders = false
     private(set) var hasBanners = false
@@ -55,6 +58,7 @@ class HomeViewModel:BaseViewModel {
     var pushContactUs: (() -> ())?
     var pushDepartments: (() -> ())?
     var pushAboutUS: (() -> ())?
+    var closingTimeCompletion: (() -> ())?
 
     //MARK: - Images APis
     func fetchImages() {
@@ -83,9 +87,32 @@ class HomeViewModel:BaseViewModel {
         locationManager.requestLocation()
     }
     
-    private func getDeliveryLocation(from location:CLLocation) {
+//    private func getDeliveryLocation(from location:CLLocation) {
+//        let geoCoder = CLGeocoder()
+//        var address = ""
+//        geoCoder.reverseGeocodeLocation(location, completionHandler: { [weak self] (placeMarks, error) -> Void in
+//            guard let self = self else { return }
+//            if error != nil {
+//                return
+//            }
+//            // Place details
+//            var placeMark: CLPlacemark!
+//            placeMark = placeMarks?[0]
+//
+//            if let region = placeMark.subLocality {
+//                address += ", \(region)"
+//            }
+//
+//            if let city = placeMark.administrativeArea {
+//                address += ", \(city)"
+//            }
+//            self.deliveryLocation = address.trimmingCharacters(in: .punctuationCharacters)
+//        })
+//    }
+    
+    func createAddressFromCoordinates(coordinate: CLLocationCoordinate2D) {
         let geoCoder = CLGeocoder()
-        var address = ""
+        let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
         geoCoder.reverseGeocodeLocation(location, completionHandler: { [weak self] (placeMarks, error) -> Void in
             guard let self = self else { return }
             if error != nil {
@@ -94,15 +121,7 @@ class HomeViewModel:BaseViewModel {
             // Place details
             var placeMark: CLPlacemark!
             placeMark = placeMarks?[0]
-            
-            if let region = placeMark.subLocality {
-                address += ", \(region)"
-            }
-            
-            if let city = placeMark.administrativeArea {
-                address += ", \(city)"
-            }
-            self.deliveryLocation = address.trimmingCharacters(in: .punctuationCharacters)
+            self.deliveryLocation = placeMark.thoroughfare ?? ""
         })
     }
     
@@ -134,6 +153,17 @@ class HomeViewModel:BaseViewModel {
             self?.branchesCompletion?()
         },showLoading: false)
     }
+    
+    func getDeliverFeesForClosingTime(){
+        let coordinates = Utils.defaultCoordinate()
+        startRequest(request:CheckoutProcessApi.getDeliveryFees(coordinates: coordinates),
+                     mappingClass: BaseModel<[DeliveryFees]>.self) { [weak self] response in
+          
+            self?.deliveryFees = response?.data ?? []
+            self?.closingTimeCompletion?()
+        }
+    }
+    
     
     func getAddresses() {
         if let token = CurrentUser.shared.token,
@@ -260,9 +290,13 @@ extension HomeViewModel: CLLocationManagerDelegate {
 
         if let location = locations.first {
             getBranches(with: location)
-            getDeliveryLocation(from: location)
+//            getDeliveryLocation(from: location)
+            createAddressFromCoordinates(coordinate: .init(latitude: location.coordinate.latitude,
+                                                           longitude: location.coordinate.longitude))
+           
         }else {
             getBranches()
+   
         }
     }
     
