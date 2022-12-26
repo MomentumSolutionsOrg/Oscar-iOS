@@ -26,7 +26,7 @@ class HomeVC: BaseViewController {
         setupView()
         setupViewmodel()
       
-        viewModel.getAddresses()
+      
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -85,13 +85,24 @@ fileprivate extension HomeVC {
         
         viewModel.closingTimeCompletion = { [weak self] in
             guard let self = self else { return }
-            print("???????")
-            
+           
             if self.viewModel.deliveryFees.isEmpty {
                 
                 self.showPopUpForClosingTime()
+                
+            } else {
+        
+                let deliveryFlags = self.viewModel.deliveryFees
+                    .compactMap({ deliveryTime in
+                    return deliveryTime.flag
+                })
+            
+                if !deliveryFlags.contains(Constants.sameDay) {
+                    self.showPopUpForClosingTime()
+                }
             }
             
+             
         }
         
         viewModel.branchesCompletion = { [weak self] in
@@ -155,6 +166,7 @@ fileprivate extension HomeVC {
         viewModel.pushAboutUS = { [weak self] in
             self?.push(AboutUsViewController())
         }
+        viewModel.getAddresses()
         viewModel.fetchImages()
         viewModel.fetchPinterestImages()
     }

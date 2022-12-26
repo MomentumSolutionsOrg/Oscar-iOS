@@ -3205,7 +3205,7 @@
 				CODE_SIGN_ENTITLEMENTS = OSCAR/OSCAR.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4.9.3;
+				CURRENT_PROJECT_VERSION = 4.9.4;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 6U3ELYT3M7;
 				ENABLE_BITCODE = NO;
@@ -3219,7 +3219,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 8.1;
+				MARKETING_VERSION = 8.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.msolapps.oscar;
 				PRODUCT_NAME = Oscar;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3238,7 +3238,7 @@
 				CODE_SIGN_ENTITLEMENTS = OSCAR/OSCAR.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4.9.3;
+				CURRENT_PROJECT_VERSION = 4.9.4;
 				DEVELOPMENT_TEAM = 6U3ELYT3M7;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3251,7 +3251,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 8.1;
+				MARKETING_VERSION = 8.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.msolapps.oscar;
 				PRODUCT_NAME = Oscar;
 				PROVISIONING_PROFILE_SPECIFIER = "";

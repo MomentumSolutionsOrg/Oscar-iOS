@@ -10,6 +10,7 @@ import Foundation
 enum Constants {
     static let hotline = "16991"
     static let closingDeliveryTime = "10:00 PM"
+    static let sameDay = "Same Day Shopping (within the day)"
     enum ConnectionType {
         case wifi
         case ethernet

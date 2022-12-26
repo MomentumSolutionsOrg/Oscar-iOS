@@ -20,10 +20,12 @@ class HomeViewModel:BaseViewModel {
         didSet {
             let coordinates = "\(selectedBranch?.latitude ?? ""),\(selectedBranch?.longitude ?? "")"
             UserDefaultsManager.shared.saveInUserDefault(key: .currentStoreCoordinates, data: coordinates)
+            print(coordinates, "🥷🏻🥷🏻🥷🏻🥷🏻🥷🏻")
             CurrentUser.shared.store = selectedBranch?.storeID ?? "01"
             Utils.checkCart()
-            getDeliverFeesForClosingTime()
+            getDeliverFeesForClosingTime(stringCoordinates: coordinates)
           
+        
         }
     }
     var deliveryLocation = ""
@@ -148,14 +150,16 @@ class HomeViewModel:BaseViewModel {
     }
     
     func getBranches() {
-        startRequest(request: HomeApi.branchesWithoutLocation, mappingClass: BaseModel<[Branch]>.self, successCompletion: { [weak self] response in
+        startRequest(request: HomeApi.branchesWithoutLocation,
+                     mappingClass: BaseModel<[Branch]>.self, successCompletion: { [weak self] response in
             self?.branches = response?.data ?? []
             self?.branchesCompletion?()
         },showLoading: false)
     }
     
-    func getDeliverFeesForClosingTime(){
-        let coordinates = Utils.defaultCoordinate()
+    func getDeliverFeesForClosingTime(stringCoordinates: String?){
+        let coordinates = stringCoordinates ?? Utils.defaultCoordinate()
+        print(coordinates, "🥲🥲🥲🥲🥲🥲")
         startRequest(request:CheckoutProcessApi.getDeliveryFees(coordinates: coordinates),
                      mappingClass: BaseModel<[DeliveryFees]>.self) { [weak self] response in
           
@@ -169,18 +173,26 @@ class HomeViewModel:BaseViewModel {
         if let token = CurrentUser.shared.token,
            token != "" {
             startRequest(request: AddressApi.getAddresses, mappingClass: BaseModel<[Address]>.self, successCompletion: { [weak self] response in
-                if let defaultAddress = response?.data?.first(where: { $0.isDefault == 1 }) {
-                    self?.deliveryLocation = ((defaultAddress.area ?? "") + ", \(defaultAddress.city ?? "")").trimmingCharacters(in: .punctuationCharacters)
-                    if let coordinates = defaultAddress.coordinates,
-                       coordinates != "" {
-                        self?.getBranches(with: coordinates)
-                    }else {
-                        self?.getBranches()
-                    }
-                } else {
+                if let addresses = response?.data, addresses.isEmpty {
+                    print("🤯🤯🤯")
                     self?.requestLocation()
+                } else {
+            
+                    if let defaultAddress = response?.data?.first(where: { $0.isDefault == 1 }) {
+                        self?.deliveryLocation = ((defaultAddress.area ?? "") + ", \(defaultAddress.city ?? "")").trimmingCharacters(in: .punctuationCharacters)
+                        if let coordinates = defaultAddress.coordinates,
+                           coordinates != "" {
+                            self?.getBranches(with: coordinates)
+                        }else {
+                            self?.getBranches()
+                        }
+                    } else {
+                        print("🤯🤯🤯🤯🤯🤯🤯🤯🤯")
+                        self?.requestLocation()
+                    }
+                    
                 }
-                
+          
             },showLoading: false)
         }
     }
@@ -290,7 +302,6 @@ extension HomeViewModel: CLLocationManagerDelegate {
 
         if let location = locations.first {
             getBranches(with: location)
-//            getDeliveryLocation(from: location)
             createAddressFromCoordinates(coordinate: .init(latitude: location.coordinate.latitude,
                                                            longitude: location.coordinate.longitude))
            
