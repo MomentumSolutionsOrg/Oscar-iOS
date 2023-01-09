@@ -8,15 +8,23 @@
 import Foundation
 
 struct SignUpParams: RequestParameters {
-    let name:String
-    let phone:String
-    let email:String
-    let password:String
-    let referralId:String
+    var firstName: String
+    var lastName: String
+    var phone: String
+    var userName: String
+    var email: String
+    var password: String
+    var passwordConfirmation: String
+    var companyId: String = Constants.companyID
+    
     
     private enum CodingKeys: String, CodingKey {
-        case name,phone,email,password
-        case referralId = "referral_id"
+        case firstName = "first_name"
+        case lastName = "last_name"
+        case phone, email, password
+        case passwordConfirmation = "password_confirmation"
+        case userName = "name"
+        case companyId = "company_id"
     }
 }
 

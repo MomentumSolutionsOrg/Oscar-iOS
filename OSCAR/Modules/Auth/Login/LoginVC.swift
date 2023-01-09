@@ -33,10 +33,15 @@ class LoginVC: BaseViewController {
         }
     }
     @IBAction func loginBtnTapped(_ sender: Any) {
-        if emailTF.text != "",
-           passTF.text != "" {
-            viewmodel.login(email: emailTF.text ?? "", password: passTF.text ?? "")
-        }else {
+        guard let emailText = emailTF.text,
+              let passText = passTF.text else { return }
+        
+        if !emailText.isEmptyText() ||
+           !passText.isEmptyText() {
+            
+            viewmodel.login(email: emailText,
+                            password: passText)
+        } else {
             showToast(message: "fill_all_fields".localized)
         }
     }
@@ -44,8 +49,10 @@ class LoginVC: BaseViewController {
         push(PhoneVC())
     }
     @IBAction func forgotPasswordTapped(_ sender: Any) {
-        if emailTF.text != "" {
-            viewmodel.forgetPass(email: emailTF.text ?? "")
+        guard let emailText = emailTF.text else { return }
+        
+        if emailText.isEmptyText() {
+            viewmodel.forgetPass(email: emailText)
         }else {
             showToast(message: "enter_email".localized)
         }

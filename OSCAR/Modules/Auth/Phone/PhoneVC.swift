@@ -21,7 +21,8 @@ class PhoneVC: BaseViewController {
         setupViewModel(viewModel: viewModel)
     }
     @IBAction func verifyButtonTapped(_ sender: Any) {
-        viewModel.phoneNumber = "+20" + (phoneTF.text ?? "")
+        
+        viewModel.phoneNumber =  (phoneTF.text ?? "")
         self.showLoadingView()
         viewModel.sendCode { [weak self] error in
             guard let self = self else { return }

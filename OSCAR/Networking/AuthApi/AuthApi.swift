@@ -8,10 +8,10 @@
 import Alamofire
 
 enum AuthPaths {
-    static let login = "customer/login"
-    static let signUp = "customer/register"
-    static let logout = "customer/logout"
-    static let forgetPass = "customer/forgot_password"
+    static let login = "auth/login"
+    static let signUp = "auth/register"
+    static let logout = "auth/logout"
+    static let forgetPass = "forget/password"
     static let updateProfile = "update"
     static let contactUs = "contact_us"
     static let fcmToken = "devices/store_new"
@@ -48,8 +48,6 @@ enum AuthApi: Requestable {
     
     var method: HTTPMethod {
         switch self {
-        case .logout:
-            return .get
         default:
             return .post
         }

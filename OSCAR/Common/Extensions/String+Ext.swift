@@ -53,6 +53,10 @@ extension String {
         return self.trimmingCharacters(in: .whitespaces)
         
     }
+    func isEmptyText() -> Bool{
+        return self.trimmingCharacters(in: .whitespaces).isEmpty
+        
+    }
     
     func validateRegex(regixFormat: String) -> Bool{
         let regixPred =  NSPredicate(format:"SELF MATCHES %@", regixFormat)

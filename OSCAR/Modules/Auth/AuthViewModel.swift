@@ -37,7 +37,9 @@ class AuthViewModel: BaseViewModel {
     }
     
     func sendCode(completion: @escaping (Error?)->Void) {
-        PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber, uiDelegate: nil) { [weak self] (verificationID, error) in
+        let phone = "+20" + phoneNumber
+        PhoneAuthProvider.provider().verifyPhoneNumber(phone,
+                                                       uiDelegate: nil) { [weak self] (verificationID, error) in
           if let error = error {
             completion(error)
           }else {
