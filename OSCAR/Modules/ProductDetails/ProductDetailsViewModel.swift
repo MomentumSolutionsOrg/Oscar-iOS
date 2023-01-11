@@ -49,7 +49,9 @@ class ProductDetailsViewModel: BaseViewModel {
     }
     
     func fetchProduct(for id: String) {
-        startRequest(request: ProductApi.showProduct(id: id), mappingClass: ProductResponse.self) { [weak self] response in
+        print("fetchProduct \(id)")
+        startRequest(request: ProductApi.showProduct(id: id),
+                     mappingClass: ProductResponse.self) { [weak self] response in
             self?.product = response?.data
             self?.relatedProducts = response?.relatedProducts ?? []
             self?.showRelatedProductCompletion?()
@@ -67,7 +69,8 @@ class ProductDetailsViewModel: BaseViewModel {
         }
     }
     func getProductDetails(){
-        if product?.productID != "" {
+        if product != nil {
+            print("getProductDetails\(product?.productID)")
             startRequest(request: ProductApi.showProduct(id: product?.productID ?? ""), mappingClass: ProductResponse.self) { [weak self] response in
                 self?.product = response?.data
                 self?.relatedProducts = response?.relatedProducts ?? []

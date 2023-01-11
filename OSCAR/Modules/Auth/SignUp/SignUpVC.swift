@@ -10,9 +10,8 @@ import UIKit
 class SignUpVC: BaseViewController {
 
     @IBOutlet weak var userNameTF: GeneralTextField!
-    @IBOutlet weak var lastNameTF: GeneralTextField!
-    @IBOutlet weak var firstNameTF: GeneralTextField!
     @IBOutlet weak var emailTF: GeneralTextField!
+    @IBOutlet weak var phoneNumberTF: GeneralTextField!
     @IBOutlet weak var passTF: GeneralTextField!
     @IBOutlet weak var passConfirmTF: GeneralTextField!
     @IBOutlet weak var referralTF: GeneralTextField!
@@ -23,6 +22,8 @@ class SignUpVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        phoneNumberTF.text = viewmodel.phoneNumber
+        
         setupViewmodel()
         
     }
@@ -37,16 +38,14 @@ class SignUpVC: BaseViewController {
     @IBAction func signupBtnTapped(_ sender: Any) {
         
         guard let emailText = emailTF.text,
-              let firstNameText = firstNameTF.text,
-              let lastNameText = lastNameTF.text,
+              let phoneText = phoneNumberTF.text,
               let userNameText = userNameTF.text,
               let passText = passTF.text,
               let confirmPassText = passConfirmTF.text,
               let referralText = referralTF.text else { return }
         
         if emailText.isEmptyText() ||
-            firstNameText.isEmptyText() ||
-            lastNameText.isEmptyText() ||
+            phoneText.isEmptyText() ||
             userNameText.isEmptyText() ||
             passText.isEmptyText() ||
             confirmPassText.isEmptyText() {
@@ -58,13 +57,14 @@ class SignUpVC: BaseViewController {
             if passTF.text != passConfirmTF.text {
                 showToast(message: "passwords_donot_match".localized)
             }else {
-                let params = SignUpParams(firstName: firstNameText,
-                                          lastName: lastNameText,
-                                          phone: viewmodel.phoneNumber,
-                                          userName: userNameText,
+                
+                let params = SignUpParams(name: userNameText,
+                                          phone: phoneText,
                                           email: emailText,
                                           password: passText,
-                                          passwordConfirmation: confirmPassText)
+                                          passwordConfirmation: confirmPassText,
+                                          referralID: referralText)
+                
                 viewmodel.signUp(params: params)
             }
         }

@@ -25,6 +25,18 @@ enum HomeApi: Requestable {
     case banners
     case pinterest
     
+    
+    var baseURL: String {
+        switch self {
+        case .branches, .branchesWithoutLocation:
+            return NetworkConstants.baseURL
+        default:
+            return NetworkConstants.oldURL
+        }
+        
+    }
+    
+    
     var path: String {
         switch self {
         case .branches(let long,let lat):

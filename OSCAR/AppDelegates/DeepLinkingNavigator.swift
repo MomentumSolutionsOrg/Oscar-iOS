@@ -56,9 +56,9 @@ class DeepLinkingNavigator {
     private func fetchProduct(for id:String) {
         Api().fireRequestWithSingleResponse(urlConvertible: ProductApi.showProduct(id: id), mappingClass: ProductResponse.self).get { [weak self] response in
             if let product = response.data {
-                let productVC = ProductDetailsVC()
-                productVC.viewModel.product = product
-                productVC.viewModel.relatedProducts = response.relatedProducts ?? []
+                let productVC = ProductDetailsVC(product: product)
+//                productVC.viewModel.product = product
+//                productVC.viewModel.relatedProducts = response.relatedProducts ?? []
                 self?.push(viewController: productVC)
             }
         }.catch { error in

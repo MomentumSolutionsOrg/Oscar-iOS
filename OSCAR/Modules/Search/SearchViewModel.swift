@@ -32,18 +32,19 @@ class SearchViewModel: BaseViewModel {
         }
     }
     
-    func getProduct(for id:String) {
-        startRequest(request: ProductApi.showProduct(id: id), mappingClass: ProductResponse.self) { [weak self] response in
-            if let product = response?.data {
-                let productVC = ProductDetailsVC()
-                productVC.viewModel.product = product
-                productVC.viewModel.relatedProducts = response?.relatedProducts ?? []
-                self?.productCompletion?(productVC)
-            }else {
-                self?.productCompletion?(nil)
-            }
-        }
-    }
+//    func getProduct(for id:String) {
+//        startRequest(request: ProductApi.showProduct(id: id), mappingClass: ProductResponse.self) { [weak self] response in
+//            if let product = response?.data {
+//                 let productVC = ProductDetailsVC(product: product)
+//                //😭
+////                productVC.viewModel.product = product
+////                productVC.viewModel.relatedProducts = response?.relatedProducts ?? []
+//                self?.productCompletion?(productVC)
+//            }else {
+//                self?.productCompletion?(nil)
+//            }
+//        }
+//    }
     
     func filterSort() {
 //        let sort = SortParams(price: selectedSortPrice,name: selectedSortName)

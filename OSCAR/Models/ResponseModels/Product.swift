@@ -8,17 +8,6 @@
 import Foundation
 
 
-struct BarcodeResponse: Codable {
-    let data: Product?
-    let relatedProducts: [Product]?
-    enum CodingKeys: String, CodingKey {
-        case data
-        case relatedProducts = "related_products"
-    }
-}
-
-
-
 struct ProductResponse: Codable {
     let message: String?
     let data: Product?

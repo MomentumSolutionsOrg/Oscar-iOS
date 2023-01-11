@@ -114,7 +114,8 @@ class HomeViewModel:BaseViewModel {
     
     func createAddressFromCoordinates(coordinate: CLLocationCoordinate2D) {
         let geoCoder = CLGeocoder()
-        let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        let location = CLLocation(latitude: coordinate.latitude,
+                                  longitude: coordinate.longitude)
         geoCoder.reverseGeocodeLocation(location, completionHandler: { [weak self] (placeMarks, error) -> Void in
             guard let self = self else { return }
             if error != nil {
@@ -128,25 +129,26 @@ class HomeViewModel:BaseViewModel {
     }
     
     func getBranches(with location:CLLocation) {
-        let longitude = Double(location.coordinate.longitude)
-        let latitude = Double(location.coordinate.latitude)
+        print("🫣\(location.coordinate.longitude)---\(location.coordinate.latitude)")
+        let longitude = 31.2511796//Double(location.coordinate.longitude)
+        let latitude = 29.9980609//Double(location.coordinate.latitude)
         startRequest(request: HomeApi.branches(long: longitude, lat: latitude), mappingClass: BaseModel<[Branch]>.self) { [weak self] response in
             self?.branches = response?.data ?? []
             self?.branchesCompletion?()
         }
     }
-    
+
+
     func getBranches(with location: String) {
+        print("😠\(location)")
         let locations = location.split(separator: ",").compactMap { Double($0) }
         let latitude = locations.first ?? 0.0
         var longitude = 0.0
         if locations.count > 1 {
             longitude = locations[1]
         }
-        startRequest(request: HomeApi.branches(long: longitude, lat: latitude), mappingClass: BaseModel<[Branch]>.self) { [weak self] response in
-            self?.branches = response?.data ?? []
-            self?.branchesCompletion?()
-        }
+        let cllocation = CLLocation(latitude: latitude, longitude: longitude)
+        getBranches(with: cllocation)
     }
     
     func getBranches() {
@@ -200,12 +202,11 @@ class HomeViewModel:BaseViewModel {
     //MARK: - Product APis
     func getProduct(for barcode:String) {
         print(barcode, "🤯")
-        startRequest(request: ProductApi.barcode(barcode: barcode), mappingClass: BarcodeResponse.self) { [weak self] response in
+        startRequest(request: ProductApi.barcode(barcode: barcode),
+                     mappingClass: ProductResponse.self) { [weak self] response in
             if let product = response?.data {
-                let productVC = ProductDetailsVC()
-                productVC.viewModel.product = product
-                productVC.viewModel.relatedProducts = response?.relatedProducts ?? []
-                self?.barcodeSearchCompletion?(productVC)
+                 let productVC = ProductDetailsVC(product: product)
+                  self?.barcodeSearchCompletion?(productVC)
             }else {
                 self?.barcodeSearchCompletion?(nil)
             }
@@ -246,12 +247,12 @@ class HomeViewModel:BaseViewModel {
         guard let url = URL(string: link) else { return }
         UIApplication.shared.open(url)
     }
-    
+//    
     private func fetchProduct(for id:String) {
         startRequest(request: ProductApi.showProduct(id: id), mappingClass: PaginationModel<Product>.self) { [weak self] response in
             if let product = response?.data?.data {
-                let productVC = ProductDetailsVC()
-                productVC.viewModel.product = product
+                let productVC = ProductDetailsVC(product: product)
+//                productVC.viewModel.product = product
 //                productVC.viewModel.relatedProducts = response?.relatedProducts ?? []
                 self?.productCompletion?(productVC)
             }else {
@@ -289,7 +290,7 @@ extension HomeViewModel: CLLocationManagerDelegate {
     }
 
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        if (status != .denied || status == .restricted) {
+        if (status != .denied || status == .restricted || status == .notDetermined) {
             locationManager.requestLocation()
             
         }else {
@@ -302,11 +303,13 @@ extension HomeViewModel: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 
         if let location = locations.first {
+            print("!!!!!!!!!")
             getBranches(with: location)
             createAddressFromCoordinates(coordinate: .init(latitude: location.coordinate.latitude,
                                                            longitude: location.coordinate.longitude))
            
         }else {
+            print("?????????")
             getBranches()
    
         }

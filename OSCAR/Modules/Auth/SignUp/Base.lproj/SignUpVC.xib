@@ -13,10 +13,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpVC" customModule="Oscar" customModuleProvider="target">
             <connections>
                 <outlet property="emailTF" destination="owr-D1-aCm" id="fea-pr-u2I"/>
-                <outlet property="firstNameTF" destination="CXX-Gr-8ug" id="6Dn-dl-6Zr"/>
-                <outlet property="lastNameTF" destination="5Qu-jg-QnS" id="EVL-mW-oN1"/>
                 <outlet property="passConfirmTF" destination="byj-mm-PPY" id="VJY-aJ-rt7"/>
                 <outlet property="passTF" destination="Nk8-XA-OCp" id="MEN-Re-xSK"/>
+                <outlet property="phoneNumberTF" destination="G6E-Iu-Iah" id="qLR-zg-ACE"/>
                 <outlet property="referralTF" destination="nX8-OU-Bnz" id="E7b-gm-zzv"/>
                 <outlet property="userNameTF" destination="Mm7-du-m95" id="qER-B1-xc6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -38,7 +37,7 @@
                     <rect key="frame" x="0.0" y="92" width="414" height="770"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W0i-64-vCL">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="644"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="586"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="t2n-tQ-JDP">
                                     <rect key="frame" x="122" y="32" width="170" height="55"/>
@@ -48,26 +47,10 @@
                                     </constraints>
                                 </imageView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="w6a-Ys-wOk">
-                                    <rect key="frame" x="32" y="132" width="350" height="452"/>
+                                    <rect key="frame" x="32" y="132" width="350" height="394"/>
                                     <subviews>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CXX-Gr-8ug" customClass="GeneralTextField" customModule="Oscar" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="350" height="46"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="46" id="vwt-Pp-9Rp"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" textContentType="username"/>
-                                        </textField>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Qu-jg-QnS" customClass="GeneralTextField" customModule="Oscar" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="58" width="350" height="46"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="46" id="uO3-jg-ljn"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" textContentType="username"/>
-                                        </textField>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mm7-du-m95" customClass="GeneralTextField" customModule="Oscar" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="116" width="350" height="46"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="46"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="46" id="ka5-3K-v71"/>
                                             </constraints>
@@ -75,15 +58,23 @@
                                             <textInputTraits key="textInputTraits" textContentType="username"/>
                                         </textField>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="owr-D1-aCm" customClass="GeneralTextField" customModule="Oscar" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="174" width="350" height="46"/>
+                                            <rect key="frame" x="0.0" y="58" width="350" height="46"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="46" id="1EY-Ul-4tB"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                         </textField>
+                                        <textField opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G6E-Iu-Iah" customClass="GeneralTextField" customModule="Oscar" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="116" width="350" height="46"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="46" id="qGa-xC-Wo2"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="tel"/>
+                                        </textField>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nk8-XA-OCp" customClass="GeneralTextField" customModule="Oscar" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="232" width="350" height="46"/>
+                                            <rect key="frame" x="0.0" y="174" width="350" height="46"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="46" id="SEr-mU-yGz"/>
                                             </constraints>
@@ -94,7 +85,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </textField>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password Confirmation" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="byj-mm-PPY" customClass="GeneralTextField" customModule="Oscar" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="290" width="350" height="46"/>
+                                            <rect key="frame" x="0.0" y="232" width="350" height="46"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="46" id="wQk-qo-GmA"/>
                                             </constraints>
@@ -105,7 +96,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </textField>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Referral ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nX8-OU-Bnz" customClass="GeneralTextField" customModule="Oscar" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="348" width="350" height="46"/>
+                                            <rect key="frame" x="0.0" y="290" width="350" height="46"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="46" id="Jm9-jI-Nd6"/>
                                             </constraints>
@@ -113,7 +104,7 @@
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVG-gv-1ab" customClass="BackGroundButton" customModule="Oscar" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="406" width="350" height="46"/>
+                                            <rect key="frame" x="0.0" y="348" width="350" height="46"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="46" id="6mt-Ck-aZi"/>
                                             </constraints>

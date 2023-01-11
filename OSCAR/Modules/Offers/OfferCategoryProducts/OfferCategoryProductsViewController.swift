@@ -57,13 +57,20 @@ fileprivate extension OfferCategoryProductsViewController {
         productsCollectionView.registerCellNib(cellClass: GridCollectionViewCell.self)
         productsCollectionView.registerCellNib(cellClass: LoadMoreCollectionViewCell.self)
     }
+    
+    
+    func goToProductDetails(with product:Product) {
+        let productDetails = ProductDetailsVC(product: product)
+        push(productDetails)
+    }
 }
 
 extension OfferCategoryProductsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let product = viewModel.offerProducts[indexPath.row]
+        let product = viewModel.offerProducts[indexPath.item]
         let productID = product.productID ?? "\(product.id ?? 0)"
-        viewModel.getProduct(for: productID)
+        goToProductDetails(with: product)
+//        viewModel.getProduct(for: productID)
     }
 }
 

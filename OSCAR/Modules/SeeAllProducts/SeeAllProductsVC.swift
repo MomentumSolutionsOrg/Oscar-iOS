@@ -38,6 +38,7 @@ fileprivate extension SeeAllProductsVC {
         
         viewModel.productCompletion = { [weak self] productVC in
             if let productVC = productVC {
+
                 self?.push(productVC)
             }else {
                 self?.showToast(message: "product_not_available".localized)
@@ -57,13 +58,17 @@ fileprivate extension SeeAllProductsVC {
         productsCollectionView.registerCellNib(cellClass: ListCollectionViewCell.self)
         
     }
+    func goToProductDetails(with product:Product) {
+        let productDetails = ProductDetailsVC(product: product)
+        push(productDetails)
+    }
 }
 
 extension SeeAllProductsVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let product = viewModel.products[indexPath.row]
-        let productID = product.productID ?? "\(product.id ?? 0)"
-        viewModel.getProduct(for: productID)
+        let product = viewModel.products[indexPath.item]
+        goToProductDetails(with: product)
+//        viewModel.getProduct(for: product.productID ?? "")
     }
 }
 

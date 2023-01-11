@@ -40,8 +40,7 @@ class CategoriesVC: BaseViewController {
     }
     
     func goToProductDetails(with product:Product) {
-        let productDetails = ProductDetailsVC()
-        productDetails.viewModel.product = product
+        let productDetails = ProductDetailsVC(product: product)
         push(productDetails)
     }
     

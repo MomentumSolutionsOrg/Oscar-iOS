@@ -16,14 +16,16 @@ class AuthViewModel: BaseViewModel {
     
     func login(email:String,password:String) {
         let params = LoginParams(email: email, password: password)
-        startRequest(request: AuthApi.login(params), mappingClass: LoginResponse.self) { [weak self] response in
+        startRequest(request: AuthApi.login(params),
+                     mappingClass: LoginResponse.self) { [weak self] response in
             Utils.saveUserData(response: response)
             self?.defaultcompletion?()
         }
     }
     
     func signUp(params:SignUpParams) {
-        startRequest(request: AuthApi.signUp(params), mappingClass: LoginResponse.self) { [weak self] response in
+        startRequest(request: AuthApi.signUp(params),
+                     mappingClass: LoginResponse.self) { [weak self] response in
             Utils.saveUserData(response: response)
             self?.defaultcompletion?()
         }

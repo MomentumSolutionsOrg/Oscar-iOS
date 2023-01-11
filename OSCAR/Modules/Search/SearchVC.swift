@@ -115,12 +115,18 @@ fileprivate extension SearchVC {
         searchResultsCollectionView.registerCellNib(cellClass: ListCollectionViewCell.self)
         
     }
+    
+    func goToProductDetails(with product:Product) {
+        let productDetails = ProductDetailsVC(product: product)
+        push(productDetails)
+    }
 }
 
 
 extension SearchVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        viewModel.getProduct(for: viewModel.filteredProducts[indexPath.row].productID ?? "1")
+//        viewModel.getProduct(for: viewModel.filteredProducts[indexPath.row].productID ?? "1")
+        goToProductDetails(with: viewModel.filteredProducts[indexPath.item])
     }
 }
 

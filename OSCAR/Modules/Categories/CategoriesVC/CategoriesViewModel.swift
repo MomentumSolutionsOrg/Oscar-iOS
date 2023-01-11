@@ -31,12 +31,9 @@ class CategoriesViewmodel: BaseViewModel {
     }
     
     func getProduct(for barcode:String) {
-        print(barcode, "🤯")
-        startRequest(request: ProductApi.barcode(barcode: barcode), mappingClass: BarcodeResponse.self) { [weak self] response in
+        startRequest(request: ProductApi.barcode(barcode: barcode), mappingClass: ProductResponse.self) { [weak self] response in
             if let product = response?.data {
-                let productVC = ProductDetailsVC()
-                productVC.viewModel.product = product
-                productVC.viewModel.relatedProducts = response?.relatedProducts ?? []
+                 let productVC = ProductDetailsVC(product: product)
                 self?.barcodeSearchCompletion?(productVC)
             }else {
                 self?.barcodeSearchCompletion?(nil)

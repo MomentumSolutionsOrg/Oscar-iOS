@@ -24,8 +24,7 @@ class SubCategoryVC: BaseViewController {
 //    }
     
     func goToPoductDetails(with product:Product) {
-        let productDetails = ProductDetailsVC()
-        productDetails.viewModel.product = product
+        let productDetails = ProductDetailsVC(product: product)
         push(productDetails)
     }
     @IBAction func backTapped(_ sender: Any) {

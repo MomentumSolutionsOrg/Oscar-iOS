@@ -9,6 +9,14 @@ import UIKit
 
 class ProductDetailsVC: BaseViewController {
     
+    init(product: Product) {
+        self.viewModel.product = product
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var productImagesCollectionView: UICollectionView!
     @IBOutlet weak var favouriteButton: UIButton!
@@ -163,7 +171,9 @@ fileprivate extension ProductDetailsVC {
 //        viewModel.addToCartCompletion = { [weak self] message in
 //            self?.showAlert(message: message)
 //        }
-        viewModel.showProductCompletion = setupView
+        viewModel.showProductCompletion = { [weak self]  in
+            self?.setupView()
+        }
         viewModel.getProductDetails()
     }
 }

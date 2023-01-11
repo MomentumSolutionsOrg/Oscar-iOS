@@ -36,8 +36,16 @@ class OffersViewController: BaseViewController {
     }
     
     func getProduct(at index: Int ,for indexPathRow: Int ) {
-        let id = viewModel.offers[indexPathRow].products?[index].productID ?? "1"
-        viewModel.getProduct(for: id)
+//        let id = viewModel.offers[indexPathRow].products?[index].productID ?? "1"
+        if let product = viewModel.offers[indexPathRow].products?[index] {
+            goToProductDetails(with: product)
+        }
+       
+    }
+    
+    func goToProductDetails(with product:Product) {
+        let productDetails = ProductDetailsVC(product: product)
+        push(productDetails)
     }
     
     func addToWishlist(id: String) {

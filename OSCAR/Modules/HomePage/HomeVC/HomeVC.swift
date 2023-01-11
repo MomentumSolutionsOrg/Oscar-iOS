@@ -40,6 +40,10 @@ class HomeVC: BaseViewController {
         presentNotification()
     }
 
+    func goToProductDetails(with product:Product) {
+        let productDetails = ProductDetailsVC(product: product)
+        push(productDetails)
+    }
 
     func setupTableView() {
         homeTableView.delegate = self
