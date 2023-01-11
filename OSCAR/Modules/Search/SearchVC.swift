@@ -120,7 +120,7 @@ fileprivate extension SearchVC {
 
 extension SearchVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        viewModel.getProduct(for: viewModel.filteredProducts[indexPath.row].id ?? "1")
+        viewModel.getProduct(for: viewModel.filteredProducts[indexPath.row].productID ?? "1")
     }
 }
 

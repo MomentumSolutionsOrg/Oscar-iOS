@@ -31,7 +31,7 @@ class FilterSelectionTableViewCell: UITableViewCell {
     
     func configureCell(with category:MainCategory) {
         nameLabel.text = category.name
-        numberLabel.text = "(\(category.count?.description ?? "0"))"
+        numberLabel.text = "(\(category.count.description))"
     }
     
     func configureCell(with name:String) {

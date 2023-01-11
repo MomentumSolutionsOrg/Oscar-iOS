@@ -18,8 +18,9 @@ class OrderSummaryTableViewCell: UITableViewCell {
     
     func configure(with product: Product) {
         self.productNameLabel.text = product.name
-        let quantity = (product.quantity ?? 1).description
-        let price = round(((product.total ?? 1.0) / (Double(product.quantity ?? 1))) * 100) / 100
-        priceQuantityLabel.text = quantity + " x " + price.description + " \("EGP".localized)"
+        //😭
+//        let quantity = (product.quantity ?? 1).description
+//        let price = round(((product.total ?? 1.0) / (Double(product.quantity ?? 1))) * 100) / 100
+//        priceQuantityLabel.text = quantity + " x " + price.description + " \("EGP".localized)"
     }
 }

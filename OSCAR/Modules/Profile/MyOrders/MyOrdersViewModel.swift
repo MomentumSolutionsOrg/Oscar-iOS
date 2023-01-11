@@ -25,9 +25,11 @@ class MyOrdersViewModel: BaseViewModel {
     
     func subtotal() -> Double {
         guard let products = selectedOrder?.products else { return 0.0 }
-        return products
-            .compactMap { $0.total }
-            .reduce(0.0) { $0 + $1 }
+        return 0.0
+        //😭
+//        products
+//            .compactMap { $0.total }
+//            .reduce(0.0) { $0 + $1 }
     }
     
     func total() -> Double  {
@@ -37,7 +39,7 @@ class MyOrdersViewModel: BaseViewModel {
     }
     
     func reorderSelectedOrder() {
-        if let itemsIds = selectedOrder?.products?.compactMap({ $0.id }) {
+        if let itemsIds = selectedOrder?.products?.compactMap({ $0.productID}) {
             startRequest(request: WishListApi.addSelectedToCart(itemsIds), mappingClass: MessageModel.self) {[weak self] response in
                 self?.showSuccessMessage?("items_added_to_cart".localized)
             }

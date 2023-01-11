@@ -22,7 +22,11 @@ class CategoryProductCollectionViewCell: UICollectionViewCell {
     }
     func configure(with product:Product) {
         productNameLabel.text = product.name
-        productPriceLabel.text = "EGP".localized + " " + (product.regularPrice ?? "0.0")
-        productImageView.setImage(with: product.images.first?.src ?? "")
+        let price = product.standard.price ?? 0.0
+        productPriceLabel.text = "EGP".localized + " " + price.currency
+        if let image = product.standard.image {
+            productImageView.setImage(with: image)
+        }
+       
     }
 }

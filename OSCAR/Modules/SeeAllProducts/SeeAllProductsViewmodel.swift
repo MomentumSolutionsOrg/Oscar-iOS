@@ -29,8 +29,9 @@ class SeeAllProductsViewModel: BaseViewModel {
     }
     
     func getProducts() {
-        startRequest(request: CategoriesApi.getProducts(categoryId: categoryId), mappingClass: BaseModel<[Product]>.self) { [weak self] response in
-            self?.products = response?.data ?? []
+        startRequest(request: CategoriesApi.getProducts(categoryId: categoryId),
+                     mappingClass: PaginationModel<[Product]>.self) { [weak self] response in
+            self?.products = response?.data?.data ?? []
             self?.completion?()
         }
     }

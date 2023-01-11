@@ -199,8 +199,9 @@ class HomeViewModel:BaseViewModel {
     
     //MARK: - Product APis
     func getProduct(for barcode:String) {
+        print(barcode, "🤯")
         startRequest(request: ProductApi.barcode(barcode: barcode), mappingClass: BarcodeResponse.self) { [weak self] response in
-            if let product = response?.data?.first {
+            if let product = response?.data {
                 let productVC = ProductDetailsVC()
                 productVC.viewModel.product = product
                 productVC.viewModel.relatedProducts = response?.relatedProducts ?? []
@@ -247,11 +248,11 @@ class HomeViewModel:BaseViewModel {
     }
     
     private func fetchProduct(for id:String) {
-        startRequest(request: ProductApi.showProduct(id: id), mappingClass: ProductResponse.self) { [weak self] response in
-            if let product = response?.data {
+        startRequest(request: ProductApi.showProduct(id: id), mappingClass: PaginationModel<Product>.self) { [weak self] response in
+            if let product = response?.data?.data {
                 let productVC = ProductDetailsVC()
                 productVC.viewModel.product = product
-                productVC.viewModel.relatedProducts = response?.relatedProducts ?? []
+//                productVC.viewModel.relatedProducts = response?.relatedProducts ?? []
                 self?.productCompletion?(productVC)
             }else {
                 self?.productCompletion?(nil)
@@ -260,8 +261,8 @@ class HomeViewModel:BaseViewModel {
     }
     
     func fetchCategoryProducts(for id:Int) {
-        startRequest(request: CategoriesApi.getProducts(categoryId: id), mappingClass: BaseModel<[Product]>.self) { [weak self] response in
-            if let products = response?.data,
+        startRequest(request: CategoriesApi.getProducts(categoryId: id), mappingClass: PaginationModel<[Product]>.self) { [weak self] response in
+            if let products = response?.data?.data,
                !products.isEmpty {
                 let vc = SeeAllProductsVC()
                 vc.viewModel.products = products

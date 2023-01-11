@@ -68,13 +68,14 @@ class Utils {
         if CurrentUser.shared.token != nil {
             Api().fireRequestWithSingleResponse(urlConvertible: CheckoutProcessApi.getCart, mappingClass: BaseModel<[Product]>.self).get { response in
                 guard let products = response.data else { return }
+                //😭
                 let totalCost = products
-                    .compactMap { $0.total }
-                    .reduce(0.0) { $0 + $1 }
+//                    .compactMap { $0.total }
+//                    .reduce(0.0) { $0 + $1 }
                 let count = response.data?.count ?? 0
                 
                 CurrentUser.shared.cartCount = count
-                CurrentUser.shared.cartTotal = totalCost
+//                CurrentUser.shared.cartTotal = totalCost
             }.catch { error in
                 print(error)
             }

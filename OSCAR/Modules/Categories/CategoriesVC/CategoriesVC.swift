@@ -14,6 +14,7 @@ class CategoriesVC: BaseViewController {
     private var selectedIndex: IndexPath?
     private var subCategoryIndex: IndexPath?
     private var childrenCategory: ChildCategory?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
@@ -46,7 +47,7 @@ class CategoriesVC: BaseViewController {
     
     func selectRow(at indexPath:IndexPath) {
         if viewModel.mainCategories[indexPath.row].children?.isEmpty ?? true {
-            let id = viewModel.mainCategories[indexPath.row].id ?? 1
+            let id = viewModel.mainCategories[indexPath.row].id
             let vc = SeeAllProductsVC()
             vc.viewModel.categoryId = id
             push(vc)
@@ -91,7 +92,9 @@ fileprivate extension CategoriesVC {
     func setupViewModel() {
         setupViewModel(viewModel: viewModel)
         viewModel.updateTable = { [weak self] in
-            self?.categoriesTableView.reloadData()
+            DispatchQueue.main.async {
+                self?.categoriesTableView.reloadData()
+            }
         }
         
         viewModel.barcodeSearchCompletion = { [weak self] productVC in

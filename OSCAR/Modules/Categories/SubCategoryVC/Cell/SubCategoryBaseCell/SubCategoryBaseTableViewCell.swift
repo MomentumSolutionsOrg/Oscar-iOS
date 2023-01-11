@@ -109,7 +109,7 @@ class SubCategoryBaseTableViewCell: UITableViewCell {
     func configureCell(with category:ChildCategory) {
         self.category = category
         self.nameLabel.text = category.name
-        self.categoryImageView.setImage(with: category.image?.src ?? "")
+        self.categoryImageView.setImage(with: category.image)
     }
     @IBAction func seeAllBtnTapped(_ sender: Any) {
         if viewSecondAsProducts {

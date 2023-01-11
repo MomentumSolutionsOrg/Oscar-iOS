@@ -61,7 +61,9 @@ fileprivate extension OfferCategoryProductsViewController {
 
 extension OfferCategoryProductsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        viewModel.getProduct(for: viewModel.offerProducts[indexPath.row].id ?? "1")
+        let product = viewModel.offerProducts[indexPath.row]
+        let productID = product.productID ?? "\(product.id ?? 0)"
+        viewModel.getProduct(for: productID)
     }
 }
 

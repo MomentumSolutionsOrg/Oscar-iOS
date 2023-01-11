@@ -61,7 +61,9 @@ fileprivate extension SeeAllProductsVC {
 
 extension SeeAllProductsVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        viewModel.getProduct(for: viewModel.products[indexPath.row].id ?? "1")
+        let product = viewModel.products[indexPath.row]
+        let productID = product.productID ?? "\(product.id ?? 0)"
+        viewModel.getProduct(for: productID)
     }
 }
 

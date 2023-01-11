@@ -9,7 +9,7 @@ import Foundation
 enum NetworkConstants {
     
     /// Base URLs
-    static let baseURL = "http://3.121.82.129/erpApi/public/api/"
+    static let baseURL = "http://34.105.27.34/oscarnewapis/public/api/"
     static let removeAccountURL = "https://cms.oscarstoresapp.com/remove-account"
     //static let imageBaseUrl = "https://oscar.momentum-sol.com/"
     static var storeLangPath:String  {

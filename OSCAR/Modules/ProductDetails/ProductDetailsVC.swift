@@ -44,7 +44,7 @@ class ProductDetailsVC: BaseViewController {
         pop()
     }
     @IBAction func shareButtonTapped(_ sender: Any) {
-        Utils.shareProduct(with: viewModel.product?.id ?? "")
+        Utils.shareProduct(with: viewModel.product?.productID ?? "")
     }
     @IBAction func sizesButtonTapped(_ sender: Any) {
         let vc = SelectSizeViewController()
@@ -106,7 +106,7 @@ fileprivate extension ProductDetailsVC {
         guard let product = viewModel.product else { return }
         productNameLabel.text = product.name
         scrollView.scrollTo(direction: .top, animated: true)
-        if product.inStock == "1" {
+        if product.inStock == 1 {
             addToCartButton.isEnabled = true
             addToCartButton.setTitle("add_to_cart".localized.uppercased(), for: .normal)
             if !viewModel.hasSizes {
@@ -122,24 +122,27 @@ fileprivate extension ProductDetailsVC {
             addToCartButton.isEnabled = false
             addToCartButton.setTitle("out_of_stock".localized.uppercased(), for: .normal)
         }
-        
-        descriptionLabel.text = product.productDescription
+        descriptionLabel.text = product.description
         quantityLabel.text = viewModel.quantity.description
         if viewModel.isWishListed {
             favouriteButton.setImage(#imageLiteral(resourceName: "icon-favorite_24px"), for: .normal)
         }else {
             favouriteButton.setImage(#imageLiteral(resourceName: "passion"), for: .normal)
         }
-    
-        if viewModel.product?.onSale == "1" {
+        let price = product.standard.price ?? 0.0
+        let discountPrice = product.standard.discountPrice ?? 0
+        
+        if viewModel.product?.standard.onSale == 1 {
             priceLabel.isHidden = false
-            priceLabel.attributedText = ("EGP".localized + " " + (product.regularPrice ?? "")).strikeThrough()
-            currentPriceLabel.text = "EGP".localized + " " + (product.discountPrice ?? "")
+            priceLabel.attributedText =
+            ("EGP".localized + " " + price.currency)
+                .strikeThrough()
+            currentPriceLabel.text = "EGP".localized + " " + discountPrice.currency
         }else {
             priceLabel.isHidden = true
-            currentPriceLabel.text = "EGP".localized + " " + (product.regularPrice ?? "")
+            currentPriceLabel.text = "EGP".localized + " " + price.currency
         }
-        pageController.numberOfPages = viewModel.product?.images.count ?? 0
+        pageController.numberOfPages = viewModel.product?.images().count ?? 0
         productImagesCollectionView.reloadData()
         relatedProductsCollectionView.reloadData()
     }
@@ -170,7 +173,7 @@ extension ProductDetailsVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
         case productImagesCollectionView:
-            return viewModel.product?.images.count ?? 0
+            return viewModel.product?.images().count ?? 0
         case relatedProductsCollectionView:
             return viewModel.relatedProducts.count
         default:
@@ -183,7 +186,8 @@ extension ProductDetailsVC: UICollectionViewDataSource {
         switch collectionView {
         case productImagesCollectionView:
             let cell = collectionView.dequeue(indexPath: indexPath) as ProductImageCollectionViewCell
-            cell.configureCell(with: viewModel.product?.images[indexPath.row])
+            let images = viewModel.product?.images() ?? []
+            cell.configureCell(with: images[indexPath.item])
             return cell
         case relatedProductsCollectionView:
             let cell = collectionView.dequeue(indexPath: indexPath) as CategoryProductCollectionViewCell
@@ -215,7 +219,7 @@ extension ProductDetailsVC: UICollectionViewDelegate,UICollectionViewDelegateFlo
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == relatedProductsCollectionView {
-            viewModel.fetchProduct(for: viewModel.relatedProducts[indexPath.row].id ?? "0")
+            viewModel.fetchProduct(for: viewModel.relatedProducts[indexPath.row].productID ?? "0")
         }
     }
 }

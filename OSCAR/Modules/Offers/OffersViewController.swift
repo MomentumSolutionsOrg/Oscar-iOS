@@ -36,7 +36,7 @@ class OffersViewController: BaseViewController {
     }
     
     func getProduct(at index: Int ,for indexPathRow: Int ) {
-        let id = viewModel.offers[indexPathRow].products?[index].id ?? "1"
+        let id = viewModel.offers[indexPathRow].products?[index].productID ?? "1"
         viewModel.getProduct(for: id)
     }
     

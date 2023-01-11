@@ -36,12 +36,13 @@ class CheckoutProcessViewModel: BaseViewModel {
     }
     
     func updateSubtotal() {
-        subtotal = cartProducts
-            .compactMap { $0.total }
-            .reduce(0.0) { $0 + $1 }
+        //😭
+//        subtotal = cartProducts
+//            .compactMap { $0.total }
+//            .reduce(0.0) { $0 + $1 }
         subtotalAfterDiscount = subtotal
         CurrentUser.shared.cartCount = cartProducts.count
-        CurrentUser.shared.cartTotal = subtotal
+//        CurrentUser.shared.cartTotal = subtotal
     }
     
     //MARK: - Checkout
@@ -203,9 +204,11 @@ class CheckoutProcessViewModel: BaseViewModel {
 extension CheckoutProcessViewModel: CartCellDelegate {
     func updateItem(at index: Int, with quantity: Int) {
         let product = cartProducts[index]
-        let addToCartParams = AddToCartParameters(productId: product.id ?? "1",
+        //😭
+        let productID = product.productID ?? "\(product.id ?? 0)"
+        let addToCartParams = AddToCartParameters(productId: productID,
                                                   quantity: quantity,
-                                                  weight: product.weight ?? "1")
+                                                  weight: "1")
         startRequest(request: CheckoutProcessApi.addToCart(parameters: addToCartParams), mappingClass: MessageModel.self) { [weak self] _ in
             self?.fetchCart()
         }

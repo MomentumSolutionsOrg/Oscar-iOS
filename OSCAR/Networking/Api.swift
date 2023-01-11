@@ -22,6 +22,8 @@ class Api {
             // Trigger the HTTPRequest using Alamofire
             if NetworkMonitor.shared.netOn {
                 AF.request(urlConvertible).responseJSON { response in
+                   
+                    print( response.metrics?.taskInterval.duration, "request⏱")
                     self.handleResponse(response: response, mappingClass: mappingClass).done({ successData in
                         seal.fulfill(successData)
                     }).catch({ error in

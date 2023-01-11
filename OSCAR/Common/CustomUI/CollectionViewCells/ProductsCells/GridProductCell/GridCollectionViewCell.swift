@@ -16,7 +16,9 @@ extension ProductCellDelegate where Self : BaseViewController  {
     func addToCart(product: Product?) {
         guard let product = product else { return }
         self.showLoadingView()
-        let parameters = AddToCartParameters(productId:product.id ?? "1",
+        //😭
+        let productID = product.productID ?? "\(product.id ?? 0)"
+        let parameters = AddToCartParameters(productId: productID,
                                              quantity: 1,
                                              weight: "")
         
@@ -69,16 +71,21 @@ class GridCollectionViewCell: UICollectionViewCell {
     func configureCell(with product:Product) {
         self.product = product
         print(product.liked)
-        productImageView.setImage(with: product.images.first?.src ?? "")
-        productNameLabel.text = product.name
-        if product.discountPrice == "0" {
-            discountLabel.text = ""
-            productPriceLabel.text = "EGP".localized + " " + (product.regularPrice ?? "")
-        } else {
-            discountLabel.text = ("EGP".localized + " " + (product.regularPrice ?? ""))
-            productPriceLabel.text = "EGP".localized + " " + (product.discountPrice ?? "")
+        if let image = product.standard.image {
+            productImageView.setImage(with: image)
         }
-        if product.inStock == "1" {
+        productNameLabel.text = product.name
+        let price = product.standard.price ?? 0.0
+        let discountPrice = product.standard.discountPrice ?? 0
+        
+        if product.standard.discountPrice == 0 {
+            discountLabel.text = ""
+            productPriceLabel.text = "EGP".localized + " " + price.currency
+        } else {
+            discountLabel.text = ("EGP".localized + " " + price.currency)
+            productPriceLabel.text = "EGP".localized + " " + discountPrice.currency
+        }
+        if product.inStock == 1 {
             addToCartButton.isHidden = false
             outOfStockLabel.isHidden = true
         }else {
@@ -106,7 +113,7 @@ class GridCollectionViewCell: UICollectionViewCell {
     }
     
     @IBAction func shareButtonTapped(_ sender: Any) {
-        Utils.shareProduct(with: product?.id ?? "")
+        Utils.shareProduct(with: product?.productID ?? "")
     }
     @IBAction func addToCartButtonTapped(_ sender: Any) {
         delegate?.addToCart(product: product)
@@ -136,12 +143,12 @@ extension GridCollectionViewCell{
     }
     
     private func addToWishList() {
-        startRequest(request: WishListApi.addToWishList(productId: product?.id ?? ""), mappingClass: MessageModel.self) { response in
+        startRequest(request: WishListApi.addToWishList(productId: product?.productID ?? ""), mappingClass: MessageModel.self) { response in
             print(response?.message ?? "no message")
         }
     }
     private func removeFromWishList() {
-        startRequest(request: WishListApi.removeFromWishList(productIds: [product?.id ?? ""]), mappingClass: MessageModel.self) { response in
+        startRequest(request: WishListApi.removeFromWishList(productIds: [product?.productID ?? ""]), mappingClass: MessageModel.self) { response in
             print(response?.message ?? "no message")
         }
     }

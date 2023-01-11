@@ -20,15 +20,21 @@ class OfferProductCollectionViewCell: UICollectionViewCell {
     private var id = "1"
     
     func configureCell(with product: Product) {
-        productImageView.setImage(with: product.images.first?.src ?? "")
+        if let image = product.standard.image {
+            productImageView.setImage(with: image)
+        }
         productNameLabel.text = product.name
-        self.id = product.id ?? "1"
-        if product.discountPrice == "0" {
+        if let productID = product.productID {
+            self.id = productID
+        }
+        let price = product.standard.price ?? 0.0
+        let discountPrice = product.standard.discountPrice ?? 0
+        if product.standard.discountPrice == 0 {
             priceBeforeLabel.text = ""
-            productPriceLabel.text = "EGP".localized + " " + (product.regularPrice ?? "")
+            productPriceLabel.text = "EGP".localized + " " + price.currency
         } else {
-            priceBeforeLabel.text = "EGP".localized + " " + (product.regularPrice ?? "")
-            productPriceLabel.text = "EGP".localized + " " + (product.discountPrice ?? "")
+            priceBeforeLabel.text = "EGP".localized + " " + price.currency
+            productPriceLabel.text = "EGP".localized + " " + discountPrice.currency
         }
         if let liked = product.liked {
             self.isLiked = liked

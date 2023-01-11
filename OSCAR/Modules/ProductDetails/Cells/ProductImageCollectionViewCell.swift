@@ -15,10 +15,10 @@ class ProductImageCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     
-    func configureCell(with imageModel:ImageModel?) {
-        if let image = imageModel?.src {
-            productImageView.setImage(with: image)
-        }
+    func configureCell(with image: String) {
+        
+        productImageView.setImage(with: image)
+        
     }
 
 }

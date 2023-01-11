@@ -23,12 +23,19 @@ class WishListCollectionViewCell: UICollectionViewCell {
         outOfStockLabel.text = "out_of_stock".localized
     }
     func configureCell(with product:Product, selected: Bool) {
-        self.productId = product.id ?? "1"
-        productImageView.setImage(with: product.images.first?.src ?? "")
+        
+        if let productID = product.productID {
+            self.productId = productID
+        }
+      
+        if let image = product.standard.image {
+            productImageView.setImage(with: image)
+        }
         productNameLabel.text = product.name
-        productPriceLabel.text = "\("EGP".localized) " + (product.regularPrice ?? "")
+        let price = product.standard.price ?? 0.0
+        productPriceLabel.text = "\("EGP".localized) " + price.currency
         borderView.showBorder = selected
-        if product.inStock == "1" {
+        if product.inStock == 1 {
             addToCartButton.isHidden = false
             outOfStockLabel.isHidden = true
         }else {

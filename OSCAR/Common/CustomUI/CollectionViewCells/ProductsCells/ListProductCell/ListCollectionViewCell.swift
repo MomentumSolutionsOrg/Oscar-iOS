@@ -25,16 +25,21 @@ class ListCollectionViewCell: UICollectionViewCell {
     }
     func configureCell(with product:Product) {
         self.product = product
-        productImageView.setImage(with: product.images.first?.src ?? "")
-        productNameLabel.text = product.name
-        if product.discountPrice == "0" {
-            discountLabel.text = ""
-            productPriceLabel.text = "EGP".localized + " " + (product.regularPrice ?? "")
-        } else {
-            discountLabel.text = ("EGP".localized + " " + (product.regularPrice ?? ""))
-            productPriceLabel.text = "EGP".localized + " " + (product.discountPrice ?? "")
+        if let image = product.standard.image {
+            productImageView.setImage(with: image)
         }
-        if product.inStock == "1" {
+        productNameLabel.text = product.name
+        let price = product.standard.price ?? 0.0
+        let discountPrice = product.standard.discountPrice ?? 0
+        
+        if product.standard.discountPrice == 0 {
+            discountLabel.text = ""
+            productPriceLabel.text = "EGP".localized + " " + price.currency
+        } else {
+            discountLabel.text = ("EGP".localized + " " + price.currency)
+            productPriceLabel.text = "EGP".localized + " " + discountPrice.currency
+        }
+        if product.inStock == 1 {
             addToCartButton.isHidden = false
             outOfStockLabel.isHidden = true
         }else {
@@ -46,6 +51,6 @@ class ListCollectionViewCell: UICollectionViewCell {
         delegate?.addToCart(product: product)
     }
     @IBAction func shareButtonTapped(_ sender: Any) {
-        Utils.shareProduct(with: product?.id ?? "")
+        Utils.shareProduct(with: product?.productID ?? "")
     }
 }

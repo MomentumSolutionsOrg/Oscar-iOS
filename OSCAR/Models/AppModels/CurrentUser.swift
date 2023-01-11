@@ -12,7 +12,7 @@ class CurrentUser {
     private init() {}
     var token: String?
     var user: User?
-    var store:String = "01" {
+    var store:String = "02" {
         didSet {
             UserDefaultsManager.shared.saveInUserDefault(key: .storeId, data: store)
         }

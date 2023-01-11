@@ -10,11 +10,12 @@ import Foundation
 class ProductDetailsViewModel: BaseViewModel {
     var product:Product? {
         didSet {
-            if product?.priceUnit?.lowercased().contains("quantity") ?? true {
-                hasSizes = false
-            }else {
-                hasSizes = true
-            }
+            //😭
+//            if product?.priceUnit?.lowercased().contains("quantity") ?? true {
+//                hasSizes = false
+//            }else {
+//                hasSizes = true
+//            }
             isWishListed = product?.liked ?? false
             size = "1000"
             quantity = 1
@@ -30,7 +31,7 @@ class ProductDetailsViewModel: BaseViewModel {
     var showRelatedProductCompletion: (() -> ())?
     var showProductCompletion: (() -> ())?
     func addToCart() {
-        let parameters = AddToCartParameters(productId: product?.id ?? "",
+        let parameters = AddToCartParameters(productId: product?.productID ?? "",
                                              quantity: quantity,
                                              weight: hasSizes ? size : "")
         startRequest(request: CheckoutProcessApi.addToCart(parameters: parameters), mappingClass: MessageModel.self) { [weak self] response in
@@ -55,21 +56,21 @@ class ProductDetailsViewModel: BaseViewModel {
         }
     }
     private func addToWishList() {
-        startRequest(request: WishListApi.addToWishList(productId: product?.id ?? ""), mappingClass: MessageModel.self) { response in
+        startRequest(request: WishListApi.addToWishList(productId: product?.productID ?? ""), mappingClass: MessageModel.self) { response in
             print(response?.message ?? "no message")
         }
     }
     
     private func removeFromWishList() {
-        startRequest(request: WishListApi.removeFromWishList(productIds: [product?.id ?? ""]), mappingClass: MessageModel.self) { response in
+        startRequest(request: WishListApi.removeFromWishList(productIds: [product?.productID ?? ""]), mappingClass: MessageModel.self) { response in
             print(response?.message ?? "no message")
         }
     }
     func getProductDetails(){
-        if product?.id != ""{
-            startRequest(request: ProductApi.showProduct(id: product?.id ?? ""), mappingClass: ProductResponse.self) { [weak self] response in
-                print(response)
+        if product?.productID != "" {
+            startRequest(request: ProductApi.showProduct(id: product?.productID ?? ""), mappingClass: ProductResponse.self) { [weak self] response in
                 self?.product = response?.data
+                self?.relatedProducts = response?.relatedProducts ?? []
                 self?.showProductCompletion?()
             }
         }

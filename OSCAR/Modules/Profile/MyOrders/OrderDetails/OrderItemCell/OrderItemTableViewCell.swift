@@ -13,9 +13,10 @@ class OrderItemTableViewCell: UITableViewCell {
     @IBOutlet weak var orderItemPriceLabel: UILabel!
     
     func configureCell(with product: Product) {
-        orderItemNameLabel.text = product.name
-        orderItemQuantityLabel.text = (product.quantity?.description ?? "1") + "x"
-        orderItemPriceLabel.text = "EGP".localized + " " + (product.total?.description ?? "0.0")
+        //😭
+//        orderItemNameLabel.text = product.name
+//        orderItemQuantityLabel.text = (product.quantity?.description ?? "1") + "x"
+//        orderItemPriceLabel.text = "EGP".localized + " " + (product.total?.description ?? "0.0")
     }
     
 }

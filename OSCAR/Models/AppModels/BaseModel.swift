@@ -26,15 +26,34 @@ struct BaseModel<T: Codable>: Codable {
 }
 
 struct PaginationModel<T: Codable>: Codable {
+    let message: String?
     var data: PaginationData<T>?
 }
 
+
+// MARK: - PaginationData
 struct PaginationData<T: Codable>: Codable {
-    let totalPages:Int?
-    var data: T?
-    
+    let currentPage: Int
+    let data: T?
+    let firstPageURL: String
+    let from, lastPage: Int
+    let lastPageURL: String
+    let nextPageURL, path: String
+    let perPage: Int
+    let prevPageURL: String?
+    let to, total: Int
+
     enum CodingKeys: String, CodingKey {
-        case totalPages = "last_page"
+        case currentPage = "current_page"
         case data
+        case firstPageURL = "first_page_url"
+        case from
+        case lastPage = "last_page"
+        case lastPageURL = "last_page_url"
+        case nextPageURL = "next_page_url"
+        case path
+        case perPage = "per_page"
+        case prevPageURL = "prev_page_url"
+        case to, total
     }
 }

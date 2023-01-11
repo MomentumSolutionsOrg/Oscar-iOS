@@ -75,11 +75,11 @@ class ExpandingSideMenuTableViewCell: UITableViewCell {
     
     func configureCell(with category:MainCategory, expand: Bool) {
         isMainCategories = false
-        titleLabel.text = category.name?.uppercased()
+        titleLabel.text = category.name.uppercased()
         titleLabel.textColor = UIColor.blueColor
         plusLabel.textColor = UIColor.blueColor
         subCategoryImageView.isHidden = false
-        subCategoryImageView.setImage(with: category.iconImage ?? "")
+        subCategoryImageView.setImage(with: category.iconImage)
         configure(expand: expand, children: category.children ?? [])
     }
     

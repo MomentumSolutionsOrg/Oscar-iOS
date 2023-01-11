@@ -58,37 +58,38 @@ class SearchViewModel: BaseViewModel {
 //            self?.products = response?.data ?? []
 //            self?.completion?()
 //        }
-        filteredProducts = products
-        if minPrice != "",
-           maxPrice != "" {
-            filteredProducts = filteredProducts.filter { (Double($0.regularPrice ?? "0") ?? 0.0) >= (Double(minPrice) ?? 0.0) && (Double($0.regularPrice ?? "0") ?? 0.0) <= (Double(maxPrice) ?? 1.0) }
-        }
-        
-        if selectedSortName != "" {
-            switch selectedSortName {
-            case "a_to_z":
-                filteredProducts = filteredProducts.sorted { ($0.name ?? "") < ($1.name ?? "") }
-            case "z_to_a":
-                filteredProducts = filteredProducts.sorted { ($0.name ?? "") > ($1.name ?? "") }
-            default:
-                break
-            }
-        }
-        
-        if selectedSortPrice != "" {
-            switch selectedSortPrice {
-            case "low_to_high":
-                filteredProducts = filteredProducts.sorted { (Double($0.regularPrice ?? "0") ?? 0.0)  < (Double($1.regularPrice ?? "0") ?? 0.0) }
-            case "high_to_low":
-                filteredProducts = filteredProducts.sorted { (Double($0.regularPrice ?? "0") ?? 0.0)  > (Double($1.regularPrice ?? "0") ?? 0.0) }
-            default:
-                break
-            }
-        }
-        if !selectedCategories.isEmpty {
-            let categoriesIDs = selectedCategories.map { $0.id }
-            filteredProducts = filteredProducts.filter { categoriesIDs.contains($0.categoryID ?? 0) }
-        }
+//        filteredProducts = products
+//        if minPrice != "",
+//           maxPrice != "" {
+//            filteredProducts = filteredProducts.filter { $0.standard.price ) >=
+//                (Double(minPrice) ?? 0.0) && $0.standard.price <= (Double(maxPrice) ?? 1.0) }
+//        }
+//
+//        if selectedSortName != "" {
+//            switch selectedSortName {
+//            case "a_to_z":
+//                filteredProducts = filteredProducts.sorted { ($0.name ) < ($1.name) }
+//            case "z_to_a":
+//                filteredProducts = filteredProducts.sorted { ($0.name) > ($1.name) }
+//            default:
+//                break
+//            }
+//        }
+//
+//        if selectedSortPrice != "" {
+//            switch selectedSortPrice {
+//            case "low_to_high":
+//                filteredProducts = filteredProducts.sorted { (Double($0.regularPrice ?? "0") ?? 0.0)  < (Double($1.regularPrice ?? "0") ?? 0.0) }
+//            case "high_to_low":
+//                filteredProducts = filteredProducts.sorted { (Double($0.regularPrice ?? "0") ?? 0.0)  > (Double($1.regularPrice ?? "0") ?? 0.0) }
+//            default:
+//                break
+//            }
+//        }
+//        if !selectedCategories.isEmpty {
+//            let categoriesIDs = selectedCategories.map { $0.id }
+//            filteredProducts = filteredProducts.filter { categoriesIDs.contains($0.categoryID ?? 0) }
+//        }
         completion?()
     }
     

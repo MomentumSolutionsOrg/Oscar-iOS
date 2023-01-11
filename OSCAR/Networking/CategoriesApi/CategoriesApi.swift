@@ -8,7 +8,7 @@
 import Alamofire
 
 enum CategoriesPaths {
-    static let categories = "categories_new"
+    static let categories = "categories"
     static let products = "products/"
     
 }

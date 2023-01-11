@@ -21,23 +21,30 @@ class CartItemTableViewCell: UITableViewCell {
     var index = 0
     var id = ""
     func configure(with product: Product, indexPath: IndexPath) {
-        self.quantity = product.quantity ?? 1
-        self.id = product.id ?? ""
+        self.quantity = Double(product.standard.quantity ?? "") ?? 1.0
+        if let productID = product.productID {
+            self.id = productID
+        }
+        
         self.index = indexPath.row
-        let quantity = Int(product.quantity ?? 1.0)
+        let quantity = Double(product.standard.quantity ?? "") ?? 1.0
         productQuantityLabel.text = quantity.description
-        productImageView.setImage(with: product.images.first?.src ?? "")
+        if let image = product.standard.image {
+            productImageView.setImage(with: image)
+        }
         productNameLabel.text = product.name
-        if product.weight == "0" || product.weight == "" {
+        if product.standard.quantity == "0" {
             productWeightLabel.isHidden = true
         }else {
             productWeightLabel.isHidden = false
-            productWeightLabel.text = (product.weight ?? "0") + " " + "gram".localized
+            productWeightLabel.text = (product.standard.quantity ?? "") + " " + (product.unit ?? "")
+            //"gram".localized
         }
-        if let total = product.total {
-            let roundedTotal = round(total * 100) / 100
-            productPriceLabel.text = "EGP".localized + " " + (roundedTotal.description)
-        }
+        //😭
+//        if let total = product.total {
+//            let roundedTotal = round(total * 100) / 100
+//            productPriceLabel.text = "EGP".localized + " " + (roundedTotal.description)
+//        }
     }
     
     @IBAction func changeQuantityTapped(_ sender: UIButton) {

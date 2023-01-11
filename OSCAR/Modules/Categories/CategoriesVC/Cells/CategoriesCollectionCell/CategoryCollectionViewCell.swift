@@ -19,7 +19,7 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     
     func configure(with subcategory:ChildCategory?){
         subCategoryNameLabel.text = subcategory?.name
-        self.subCategoryImage.setImage(with: subcategory?.image?.src ?? "")
+        self.subCategoryImage.setImage(with: subcategory?.image ?? "")
     }
 
 }

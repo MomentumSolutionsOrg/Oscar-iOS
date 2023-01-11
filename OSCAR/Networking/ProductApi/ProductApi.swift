@@ -8,8 +8,8 @@
 import Alamofire
 
 enum ProductPaths {
-    static let barcode = "products?barcode="
-    static let showProduct = "show_product_new/"
+    static let barcode = "barcode"
+    static let showProduct = "show_product/"
     
 }
 
@@ -21,9 +21,10 @@ enum ProductApi: Requestable {
     var path: String {
         switch self {
         case .barcode(let barcode):
-            return ProductPaths.barcode + barcode
+            return ProductPaths.barcode + "?barcode=" + barcode + "&" + NetworkConstants.storeLangPath
         case .showProduct(let id):
-            return ProductPaths.showProduct + id + "/\((LanguageManager.shared.getCurrentLanguage() ?? "en"))?store_id=\(CurrentUser.shared.store)"
+
+            return ProductPaths.showProduct + id + "?" + NetworkConstants.storeLangPath
         }
     }
     

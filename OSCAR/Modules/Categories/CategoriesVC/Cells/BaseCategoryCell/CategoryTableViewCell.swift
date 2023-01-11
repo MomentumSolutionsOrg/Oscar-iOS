@@ -86,7 +86,7 @@ class CategoryTableViewCell: UITableViewCell {
         
         self.cellIndexPath = cellIndexPath
         self.nameLabel.text = category.name
-        self.categoryImageView.setImage(with: category.image?.src ?? "")
+        self.categoryImageView.setImage(with: category.image)
         firstCollectionView.reloadData()
         if let selectedIndexPath = selectedSubCategoryIndex, selection {
             if #available(iOS 13.0 , *) {

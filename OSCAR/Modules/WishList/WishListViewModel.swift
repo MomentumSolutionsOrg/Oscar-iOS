@@ -38,27 +38,27 @@ class WishListViewModel: BaseViewModel {
     
     func removeItemsFromLocalWishlist(ids: [String]) {
         for id in ids {
-            selectedProducts.removeAll { $0.id == id }
-            products.removeAll { $0.id == id }
+            selectedProducts.removeAll { $0.productID == id }
+            products.removeAll { $0.productID == id }
         }
     }
     
     func checkSelection(at indexPath: IndexPath) -> Bool {
-        let productId = products[indexPath.row].id ?? "1"
-        return selectedProducts.contains { $0.id == productId }
+        let productId = products[indexPath.row].productID
+        return selectedProducts.contains { $0.productID == productId }
     }
     
     func toggleSelection(at indexPath: IndexPath) {
-        let productId = products[indexPath.row].id ?? "1"
-        if selectedProducts.contains(where: { $0.id == productId }) {
-            selectedProducts.removeAll { $0.id == productId }
-        }else {
+        let productId = products[indexPath.row].productID
+        if selectedProducts.contains(where: { $0.productID == productId }) {
+            selectedProducts.removeAll { $0.productID == productId }
+        } else {
             selectedProducts.append(products[indexPath.row])
         }
     }
     
     func addSelectedItemsToCart() {
-        let itemsIds = selectedProducts.compactMap {$0.id}
+        let itemsIds = selectedProducts.compactMap {$0.productID}
         startRequest(request: WishListApi.addSelectedToCart(itemsIds), mappingClass: MessageModel.self) {[weak self] response in
             self?.showSuccessMessage?("wishlist_add_message".localized)
             Utils.checkCart()

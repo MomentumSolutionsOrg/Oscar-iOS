@@ -99,11 +99,13 @@ struct LineItem: RequestParameters {
     let priceUnit: String
     
     init(product: Product) {
-        self.productId = product.id ?? ""
-        self.quantity = Int(product.quantity ?? 1)
-        self.price = product.total ?? 1
-        self.weight = product.weight ?? "1"
-        self.priceUnit = product.priceUnit ?? "quantity"
+        let productID = product.productID ?? "\(product.id ?? 0)"
+        self.productId = productID
+        self.quantity = Int(product.standard.quantity ?? "") ?? 1
+        self.price = product.standard.price ?? 0
+        //😭
+       self.weight = "1" //product.weight ??
+       self.priceUnit =  "quantity" //product.priceUnit ??
     }
     
     private enum CodingKeys: String, CodingKey {
