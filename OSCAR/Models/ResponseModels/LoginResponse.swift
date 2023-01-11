@@ -22,22 +22,42 @@ struct LoginResponse: Codable {
 
 // MARK: - User
 struct User: Codable {
-    let id: Int?
-    let name, email: String?
-    let verified, defaultAddress: Int?
-    let phone: String?
-    let videoPoints: Int?
-    let image: String?
-    let accountNo: String?
-    let referralID: String?
+    let id, main, relID, employeeID: Int?
+    let name, phone: String?
+    let address, city, region, country: String?
+    let postbox: String?
+    let email: String?
+    let picture, company, taxid, nameS: String?
+    let phoneS, emailS, addressS, cityS: String?
+    let regionS, countryS, postboxS: String?
+    let balance: String?
+    let docid, custom1: String?
+    let ins, active: Int?
+    let password: String
+    let roleID: Int?
+    let rememberToken: String?
+    let createdAt, updatedAt, referralID, accountNo: String?
 
     enum CodingKeys: String, CodingKey {
-        case id, name, email, verified
-        case defaultAddress = "default_address"
-        case phone
-        case videoPoints = "video_points"
-        case image = "image_url"
-        case accountNo = "account_no"
+        case id, main
+        case relID = "rel_id"
+        case employeeID = "employee_id"
+        case name, phone, address, city, region, country, postbox, email, picture, company, taxid
+        case nameS = "name_s"
+        case phoneS = "phone_s"
+        case emailS = "email_s"
+        case addressS = "address_s"
+        case cityS = "city_s"
+        case regionS = "region_s"
+        case countryS = "country_s"
+        case postboxS = "postbox_s"
+        case balance, docid, custom1, ins, active, password
+        case roleID = "role_id"
+        case rememberToken = "remember_token"
+        case createdAt = "created_at"
+        case updatedAt = "updated_at"
         case referralID = "referral_id"
+        case accountNo = "account_no"
     }
 }
+

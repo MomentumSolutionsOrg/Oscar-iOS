@@ -12,7 +12,8 @@ enum AuthPaths {
     static let signUp = "auth/register"
     static let logout = "auth/logout"
     static let forgetPass = "forget/password"
-    static let updateProfile = "update"
+    static let userProfile = "auth/user-profile"
+    static let updateProfile = "auth/update"
     static let contactUs = "contact_us"
     static let fcmToken = "devices/store_new"
 }
@@ -23,6 +24,7 @@ enum AuthApi: Requestable {
     case signUp(SignUpParams)
     case forgetPass(email:String)
     case logout
+    case userProfile
     case updateProfile(parameters:UpdateProfileParameters)
     case contactUs(ContactUsParams)
     case fcmToken(token:String)
@@ -41,13 +43,17 @@ enum AuthApi: Requestable {
             return AuthPaths.updateProfile
         case .contactUs(_):
             return AuthPaths.contactUs
-        case .fcmToken(token: let token):
+        case .fcmToken:
             return AuthPaths.fcmToken
+        case .userProfile:
+            return AuthPaths.userProfile
         }
     }
     
     var method: HTTPMethod {
         switch self {
+        case .userProfile:
+            return .get
         default:
             return .post
         }
@@ -79,6 +85,8 @@ enum AuthApi: Requestable {
             return parameters.getParamsAsJson()
         case .fcmToken(token: let token):
             return ["device_token": token,"os":"ios", "language":"en"]
+        case .userProfile:
+            return nil
         }
     }
     

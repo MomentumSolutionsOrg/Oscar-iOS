@@ -10,13 +10,23 @@ import Foundation
 class ProfileViewModel: BaseViewModel {
     
     var logoutCompletion: (()->())?
+    var userProfileCompletion: (()->())?
     var updateProfileCompletion: ((String) -> Void )?
+    var user: User?
     
     private(set) var profileItems: [Constants.ProfileItems] = [.barcode,.orders,.voucher,.address]
     
     func logout() {
         startRequest(request: AuthApi.logout, mappingClass: MessageModel.self) { [weak self] _ in
             self?.logoutCompletion?()
+        }
+    }
+    
+    func getUserProfule() {
+        startRequest(request: AuthApi.userProfile,
+                     mappingClass: BaseModel<User>.self) { [weak self] response in
+            self?.user = response?.data
+            self?.userProfileCompletion?()
         }
     }
     
